@@ -126,3 +126,11 @@ or
 // This specifies syntax highlight
 @@snip [build.sbt]($root$/src/sbt-test/ref/basic/build.sbt) { #example type=text }
 ```
+
+## License
+
+sbt
+Copyright 2023 - current, Scala Center at EPFL
+Copyright 2011 - 2023, Lightbend, Inc.
+Copyright 2008 - 2010, Mark Harrah
+Licensed under Apache v2 license (see LICENSE)
