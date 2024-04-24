@@ -165,8 +165,8 @@ These dynamic versions might work one day, but break the next, and make the buil
 A Maven version range such as `[1.3.0,)` can be used to specify a dependency,
 and it can appear transitively in existing POM files. When a dependency manager
 like Coursier finds a version range, it will go out to the Internet to find the latest version.
-This could lead to surprising behavior where the effective version changes over time,
-even when there is a specified version of the library within the version range.
+Transitive version ranges could lead to surprising behavior where the effective version changes over time,
+even when there is a specific version of the library within the version range in `build.sbt`.
 Therefore, until sbt implements a lock file, we generally discourage the use of version ranges.
 
 See the [Coursier version handling](https://get-coursier.io/docs/other-version-handling) and
