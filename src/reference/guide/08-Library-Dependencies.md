@@ -153,31 +153,25 @@ to ensure binary compatibility.
 
 See [Cross Building][Cross-Build] for some more detail on this.
 
-#### Ivy revisions
+#### Dynamic versions (Discouraged)
 
 The `version` in `organization % moduleName % version` does not have to be a
-single fixed version. Ivy can select the latest revision of a module
-according to constraints you specify. Instead of a fixed revision like
-`"1.6.1"`, you specify `"latest.integration"`, `"2.9.+"`, or `"[1.0,)"`. See the
-[Ivy
-revisions](https://ant.apache.org/ivy/history/2.3.0/ivyfile/dependency.html#revision)
+single fixed version.
+Cousier and Ivy can select the latest revision of a module according to constraints you specify. 
+Instead of a fixed revision like
+`"1.6.1"`, you specify `"latest.integration"`, `"2.9.+"`, or `"[1.0,)"`. 
+These dynamic versions might work one day, but break the next, and make the build non-repeatable.
+
+A Maven version range such as `[1.3.0,)` can be used to specify a dependency,
+and it can appear transitively in existing POM files. When a dependency manager
+like Coursier finds a version range, it will go out to the Internet to find the latest version.
+Transitive version ranges could lead to surprising behavior where the effective version changes over time,
+even when there is a specific version of the library within the version range in `build.sbt`.
+Therefore, until sbt implements a lock file, we generally discourage the use of version ranges.
+
+See the [Coursier version handling](https://get-coursier.io/docs/other-version-handling) and
+the [Ivy revisions](https://ant.apache.org/ivy/history/2.3.0/ivyfile/dependency.html#revision)
 documentation for details.
-
-<!-- TODO: Add aliases -->
-
-Occasionally a Maven "version range" is used to specify a dependency
-(transitive or otherwise), such as `[1.3.0,)`.  If a specific version
-of the dependency is declared in the build, and it satisfies the
-range, then sbt will use the specified version.  Otherwise, Coursier could
-go out to the Internet to find the latest version.  This would result
-to a surprising behavior where the effective version keeps changing
-over time, even though there's a specified version of the library that
-satisfies the range condition.
-
-Maven version ranges will be replaced with its lower bound if the
-build so that when a satisfactory version is found in the dependency
-graph it will be used.  You can disable this behavior using the JVM
-flag `-Dsbt.modversionrange=false`.
 
 #### Resolvers
 
