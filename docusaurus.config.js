@@ -54,7 +54,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'sbt', // Usually your GitHub org/user name.
-  projectName: 'website', // Usually your repo name.
+  projectName: 'sbt', // Usually your repo name.
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -112,7 +112,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/sbt/website',
+            href: 'https://github.com/sbt/sbt',
             label: 'GitHub',
             position: 'right',
           },
