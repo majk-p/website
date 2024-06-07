@@ -205,6 +205,7 @@ your plugin to the list.
 - [sbt-ammonite-classpath](https://github.com/ThoughtWorksInc/sbt-ammonite-classpath): export classpath for [Ammonite](https://ammonite.io/) and [Almond](https://almond.sh/).
   <!-- 2 stars -->
 - [sbt-version-scheme-enforcer-plugin](https://github.com/isomarcte/sbt-version-scheme-enforcer): Derive Mima settings for your library from your declared `versionScheme`. This supports Early SemVer, Strict SemVer, and Package Versioning Policy (PVP).
+- [sbt-dotenv](https://github.com/philippus/sbt-dotenv): load environment variables from .env into the JVM System Environment for local development.
 
 #### IDE integration plugins
 
@@ -260,6 +261,8 @@ your plugin to the list.
 - [sbt-dependency-lock](https://stringbean.github.io/sbt-dependency-lock):
 generate dependency lockfiles and check for changes at build time.
 - [sbt-unzip](https://github.com/djice/sbt-unzip-plugin): Extract zip dependencies where you want in your project.
+- [sbt-license-check](https://github.com/philippus/sbt-license-check): check and report on licenses used, fail build for disallowed licenses.
+- [sbt-pekko-version-check](https://github.com/philippus/sbt-pekko-version-check): check if the Apache Pekko modules match, fail build if they don't.
 
 #### Web and frontend development plugins
 
