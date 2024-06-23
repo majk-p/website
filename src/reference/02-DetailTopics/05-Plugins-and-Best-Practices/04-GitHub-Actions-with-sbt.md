@@ -47,10 +47,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Setup JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
-        distribution: temurin
+        distribution: zulu
         java-version: 8
+        cache: sbt
+    - name: Setup sbt
+      uses: sbt/setup-sbt@v1
     - name: Build and Test
       run: sbt -v +test
 ```
@@ -89,10 +92,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Setup JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
-        distribution: temurin
+        distribution: zulu
         java-version: 8
+        cache: sbt
+    - name: Setup sbt
+      uses: sbt/setup-sbt@v1
     - name: Build and Test
       run: sbt -v +test
 ```
@@ -124,12 +130,14 @@ To use it, set the input parameter `cache` of the action `setup-java` to the val
 
 ```yml
     - name: Setup JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
-        distribution: temurin
+        distribution: zulu
         java-version: 8
         cache: sbt
-    - name: Build and test
+    - name: Setup sbt
+      uses: sbt/setup-sbt@v1
+    - name: Build and Test
       run: sbt -v +test
 ```
 
@@ -161,19 +169,25 @@ jobs:
         include:
           - os: ubuntu-latest
             java: 8
+            distribution: zulu
           - os: ubuntu-latest
             java: 17
+            distribution: zulu
           - os: windows-latest
+            distribution: temurin
             java: 17
     runs-on: \${{ matrix.os }}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Setup JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
-        distribution: temurin
+        distribution: \${{ matrix.distribution }}
         java-version: \${{ matrix.java }}
+        cache: sbt
+    - name: Setup sbt
+      uses: sbt/setup-sbt@v1
     - name: Build and test
       shell: bash
       run: sbt -v +test
@@ -198,22 +212,27 @@ jobs:
         include:
           - os: ubuntu-latest
             java: 17
+            distribution: temurin
             jobtype: 1
           - os: ubuntu-latest
             java: 17
+            distribution: temurin
             jobtype: 2
           - os: ubuntu-latest
             java: 17
+            distribution: temurin
             jobtype: 3
     runs-on: \${{ matrix.os }}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Setup JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
-        distribution: temurin
+        distribution: \${{ matrix.distribution }}
         java-version: \${{ matrix.java }}
+    - name: Setup sbt
+      uses: sbt/setup-sbt@v1
     - name: Build and test (1)
       if: \${{ matrix.jobtype == 1 }}
       shell: bash
@@ -248,15 +267,19 @@ jobs:
         include:
           - os: ubuntu-latest
             java: 17
+            distribution: temurin
             jobtype: 1
           - os: ubuntu-latest
             java: 17
+            distribution: temurin
             jobtype: 2
           - os: windows-latest
             java: 17
+            distribution: temurin
             jobtype: 2
           - os: ubuntu-latest
             java: 17
+            distribution: temurin
             jobtype: 3
     runs-on: \${{ matrix.os }}
     env:
@@ -267,11 +290,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Setup JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
-        distribution: temurin
+        distribution: \${{ matrix.distribution }}
         java-version: \${{ matrix.java }}
         cache: sbt
+    - name: Setup sbt
+      uses: sbt/setup-sbt@v1
     - name: Build and test (1)
       if: \${{ matrix.jobtype == 1 }}
       shell: bash
