@@ -210,10 +210,10 @@ inputs to outputs is not known.
 Like `allInputFiles`, there is an `allOutputFiles` task of return type
 `Seq[Path]` that is automatically
 generated for a task, `foo`, if the return type of `foo` is one of `Seq[Path]`,
-`Path`, `Seq[File]` or `File`. It is also generated if `foo / outputFiles` is
+`Path`, `Seq[File]` or `File`. It is also generated if `foo / fileOutputs` is
 specified. When both `fileOutputs` is specified and the return type represents a
 file or collection of files, the result of `allOutputFiles` is the distinct
-union of the files returned by the task and the files described by `ouputFiles`.
+union of the files returned by the task and the files described by `fileOutputs`.
 Calling `foo.outputFiles` is syntactic sugar for `(foo / allOutputFiles).value`.
 
 ### Filters
