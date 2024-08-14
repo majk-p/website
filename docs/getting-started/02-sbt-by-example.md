@@ -24,8 +24,8 @@ $ touch build.sbt
 
 ```
 $ sbt
-[info] Updated file /tmp/foo-build/project/build.properties: set sbt.version to 1.9.3
-[info] welcome to sbt 1.9.3 (Eclipse Adoptium Java 17.0.8)
+[info] Updated file /tmp/foo-build/project/build.properties: set sbt.version to 1.10.1
+[info] welcome to sbt 1.10.1 (Eclipse Adoptium Java 17.0.8)
 [info] Loading project definition from /tmp/foo-build/project
 [info] loading settings for project foo-build from build.sbt ...
 [info] Set current project to foo-build (in build file:/tmp/foo-build/)
@@ -189,7 +189,7 @@ Use the `reload` command to reload the build. The command causes the
 
 ```
 sbt:foo-build> reload
-[info] welcome to sbt 1.9.3 (Eclipse Adoptium Java 17.0.8)
+[info] welcome to sbt 1.10.1 (Eclipse Adoptium Java 17.0.8)
 [info] loading project definition from /tmp/foo-build/project
 [info] loading settings for project hello from build.sbt ...
 [info] set current project to Hello (in build file:/tmp/foo-build/)
@@ -537,15 +537,18 @@ or a continuous test like `~testQuick`.
 ### sbt new command
 
 You can use the sbt `new` command to quickly setup a simple "Hello world" build.
+Various templates are available, including these two:
+
+```
+\$ sbt new scala/toolkit.local
+\$ sbt new scala/scala3.g8
+```
+
+These will create a Scala 3 project. If you want to use Scala 2,
+use this command instead:
 
 ```
 \$ sbt new scala/scala-seed.g8
-....
-A minimal Scala project.
-
-name [My Something Project]: hello
-
-Template applied in ./hello
 ```
 
 When prompted for the project name, type `hello`.
