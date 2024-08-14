@@ -27,8 +27,8 @@ o por qué sbt funciona.
 
 ```
 \$ sbt
-[info] Updated file /tmp/foo-build/project/build.properties: set sbt.version to 1.9.3
-[info] welcome to sbt 1.9.3 (Eclipse Adoptium Java 17.0.8)
+[info] Updated file /tmp/foo-build/project/build.properties: set sbt.version to 1.10.1
+[info] welcome to sbt 1.10.1 (Eclipse Adoptium Java 17.0.8)
 [info] Loading project definition from /tmp/foo-build/project
 [info] loading settings for project foo-build from build.sbt ...
 [info] Set current project to foo-build (in build file:/tmp/foo-build/)
@@ -197,7 +197,7 @@ aplicada.
 
 ```
 sbt:foo-build> reload
-[info] welcome to sbt 1.9.3 (Eclipse Adoptium Java 17.0.8)
+[info] welcome to sbt 1.10.1 (Eclipse Adoptium Java 17.0.8)
 [info] loading project definition from /tmp/foo-build/project
 [info] loading settings for project hello from build.sbt ...
 [info] set current project to Hello (in build file:/tmp/foo-build/)
