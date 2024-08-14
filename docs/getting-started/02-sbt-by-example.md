@@ -537,12 +537,14 @@ or a continuous test like `~testQuick`.
 ### sbt new command
 
 You can use the sbt `new` command to quickly setup a simple "Hello world" build.
+Various templates are available, including these two:
 
 ```
+\$ sbt new scala/toolkit.local
 \$ sbt new scala/scala3.g8
 ```
 
-This will create a Scala 3 project. If you want to use Scala 2,
+These will create a Scala 3 project. If you want to use Scala 2,
 use this command instead:
 
 ```

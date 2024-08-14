@@ -79,12 +79,18 @@ You just need one line of <code>build.sbt</code> to get started with Scala. Lear
 <h3>sbt new</h3>
 Choose from community-maintained <a href="https://github.com/search?o=desc&p=1&q=g8&s=stars&type=Repositories">Giter8 templates</a> to jump start your project:
 
-<pre><code class="prettyprint">\$ sbt new scala/scala3.g8
-\$ sbt new scala/scala-seed.g8
-\$ sbt new playframework/play-scala-seed.g8
-\$ sbt new akka/akka-http-quickstart-scala.g8
-\$ sbt new http4s/http4s.g8
-\$ sbt new holdenk/sparkProjectTemplate.g8
+<pre><code class="prettyprint">\$ sbt new scala/toolkit.local  # Scala Toolkit (beta) by Scala Center and VirtusLab
+\$ sbt new typelevel/toolkit.local  # Toolkit to start building Typelevel apps
+\$ sbt new sbt/cross-platform.local  # A cross-JVM/JS/Native project
+\$ sbt new scala/scala3.g8  # Scala 3 seed template
+\$ sbt new scala/scala-seed.g8  # Scala 2 seed template
+\$ sbt new playframework/play-scala-seed.g8  # A Play project in Scala
+\$ sbt new playframework/play-java-seed.g8  # A Play project in Java
+\$ sbt new softwaremill/tapir.g8  # A tapir project using Netty
+\$ sbt new scala-js/vite.g8  # A Scala.JS + Vite project
+\$ sbt new holdenk/sparkProjectTemplate.g8  # A Scala Spark project
+\$ sbt new spotify/scio.g8  # A Scio project
+\$ sbt new disneystreaming/smithy4s.g8  # A Smithy4s project
 </code></pre>
   </div>
 </div> <!-- row -->
