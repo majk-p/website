@@ -16,7 +16,8 @@ slug: /community.html
   [good-first]: https://github.com/sbt/sbt/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
   [327]: https://github.com/sbt/sbt/issues/327
   [831]: https://github.com/sbt/sbt/issues/831
-  [discord]: https://discord.com/channels/632150470000902164/922600050989875282
+  [scala-discord]: https://discord.com/invite/scala
+  [discord-channel]: https://discord.com/channels/632150470000902164/922600050989875282
 
 Get Involved
 ============
@@ -29,7 +30,7 @@ For community support we recommend [StackOverflow's sbt tag][so]:
     context. Code examples and `build.sbt` are often useful when
     appropriately edited.
 
-There's also the [#sbt channel on Scala Discord][discord] where users hang out.
+There's also the [#sbt channel][discord-channel] on [Scala Discord][scala-discord] where users hang out.
 
 <h2 id="how-can-I-help">How can I help? <a href="#how-can-I-help" class="header-link"><span class="header-link-content">&nbsp;</span></a></h2>
 

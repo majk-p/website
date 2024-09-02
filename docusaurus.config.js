@@ -135,7 +135,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.com/channels/632150470000902164/922600050989875282',
+                href: 'https://discord.com/invite/scala',
               },
               {
                 label: 'Stack Overflow',
