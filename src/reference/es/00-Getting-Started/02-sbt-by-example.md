@@ -494,8 +494,8 @@ Cambia `build.sbt` como sigue:
 ### Cambiar `scalaVersion` temporalmente
 
 ```
-sbt:Hello> ++3.3.1!
-[info] Forcing Scala version to 3.3.1 on all projects.
+sbt:Hello> ++3.3.3!
+[info] Forcing Scala version to 3.3.3 on all projects.
 [info] Reapplying settings...
 [info] Set current project to Hello (in build file:/tmp/foo-build/)
 ```
@@ -505,9 +505,9 @@ Comprueba la entrada `scalaVersion`:
 ```
 sbt:Hello> scalaVersion
 [info] helloCore / scalaVersion
-[info]  3.3.1
+[info]  3.3.3
 [info] scalaVersion
-[info]  3.3.1
+[info]  3.3.3
 ```
 
 Esta entrada se esfumará tras un `reload`.

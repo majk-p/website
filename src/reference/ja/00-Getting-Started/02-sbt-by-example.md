@@ -478,8 +478,8 @@ Hello! The current temperature in New York is 22.7 C.
 ### Switch scalaVersion temporarily
 
 ```
-sbt:Hello> ++3.3.1!
-[info] Forcing Scala version to 3.3.1 on all projects.
+sbt:Hello> ++3.3.3!
+[info] Forcing Scala version to 3.3.3 on all projects.
 [info] Reapplying settings...
 [info] Set current project to Hello (in build file:/private/tmp/foo-build/)
 ```
@@ -489,9 +489,9 @@ sbt:Hello> ++3.3.1!
 ```
 sbt:Hello> scalaVersion
 [info] helloCore / scalaVersion
-[info]  3.3.1
+[info]  3.3.3
 [info] scalaVersion
-[info]  3.3.1
+[info]  3.3.3
 ```
 
 このセッティングは `reload` 後には無くなる。
