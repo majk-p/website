@@ -15,7 +15,7 @@ cname = "www.scala-sbt.org"
 [preprocessor.variables.variables]
 sbt_version = "2.0.0-alpha7"
 sbt_runner_version = "1.10.0"
-scala3_example_version = "3.3.1"
+scala3_example_version = "3.3.3"
 
 [preprocessor.admonish]
 command = "mdbook-admonish"
