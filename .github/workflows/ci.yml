@@ -36,7 +36,7 @@ jobs:
 
     - name: Build and test
       run: |
-        sbt -v scalafmtSbtCheck scalafmtCheckAll scripted makeSite
+        sbt -v scalafmtSbtCheck scalafmtCheckAll makeSite
 
     # https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets
     - name: Deploy to GH Pages
