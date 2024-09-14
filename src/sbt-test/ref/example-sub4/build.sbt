@@ -1,5 +1,5 @@
-ThisBuild / scalaVersion := "2.13.12"
-ThisBuild / organization := "com.example"
+scalaVersion := "3.3.3"
+organization := "com.example"
 
 val toolkitTest = "org.scala-lang" %% "toolkit-test" % "0.1.7"
 

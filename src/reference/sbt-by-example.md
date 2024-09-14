@@ -25,7 +25,7 @@ echo "sbt.version={{sbt_version}}" > project/build.properties
 
 ```bash
 $ sbt
-[info] welcome to sbt {{sbt_version}} (Azul Systems, Inc. Java 1.8.0_352)
+[info] welcome to sbt {{sbt_version}} (Azul Systems, Inc. Java)
 ....
 [info] started sbt server
 sbt:foo-build>
@@ -46,6 +46,7 @@ As a convention, we will use the `sbt:...>` or `>` prompt to mean that we're in 
 ```bash
 $ sbt
 sbt:foo-build> compile
+[success] elapsed time: 0 s, cache 0%, 1 onsite task
 ```
 
 ### Recompile on code change
@@ -55,7 +56,7 @@ re-executed whenever one of the source files within the project is modified. For
 
 ```
 sbt:foo-build> ~compile
-[success] Total time: 0 s, completed 28 Jul 2023, 13:32:35
+[success] elapsed time: 0 s, cache 100%, 1 disk cache hit
 [info] 1. Monitoring source files for foo-build/compile...
 [info]    Press <enter> to interrupt or '?' for more options.
 ```
@@ -69,19 +70,16 @@ in the `example` directory using your favorite editor as follows:
 ```scala
 package example
 
-object Hello {
-  def main(args: Array[String]): Unit = {
-    println("Hello")
-  }
-}
+@main def main(args: String*): Unit =
+  println(s"Hello ${args.mkString}")
 ```
 
 This new file should be picked up by the running command:
 
 ```
 [info] Build triggered by /tmp/foo-build/src/main/scala/example/Hello.scala. Running 'compile'.
-[info] compiling 1 Scala source to /tmp/foo-build/target/scala-2.12/classes ...
-[success] Total time: 0 s, completed 28 Jul 2023, 13:38:55
+[info] compiling 1 Scala source to /tmp/foo-build/target/out/jvm/scala-3.3.3/foo/backend ...
+[success] elapsed time: 1 s, cache 0%, 1 onsite task
 [info] 2. Monitoring source files for foo-build/compile...
 [info]    Press <enter> to interrupt or '?' for more options.
 ```
@@ -126,28 +124,28 @@ Runs a main class, passing along arguments provided on the command line.
 ### Run your app
 
 ```
-sbt:foo-build> run
-[info] running example.Hello
+sbt:foo> run
+[info] running example.main
 Hello
-[success] Total time: 0 s, completed 28 Jul 2023, 13:40:31
+[success] elapsed time: 0 s, cache 50%, 1 disk cache hit, 1 onsite task
 ```
 
 ### Set ThisBuild / scalaVersion from sbt shell
 
 ```
-sbt:foo-build> set ThisBuild / scalaVersion := "$example_scala213$"
-[info] Defining ThisBuild / scalaVersion
-[info] The new value will be used by Compile / bspBuildTarget, Compile / dependencyTreeCrossProjectId and 50 others.
+sbt:foo-build> set scalaVersion := "{{scala3_example_version}}"
+[info] Defining scalaVersion
+[info] The new value will be used by Compile / bspBuildTarget, Compile / dependencyTreeCrossProjectId and 51 others.
 [info]  Run `last` for details.
 [info] Reapplying settings...
-[info] set current project to foo-build (in build file:/tmp/foo-build/)
+[info] set current project to foo (in build file:/tmp/foo-build/)
 ```
 
 Check the `scalaVersion` setting:
 
 ```
 sbt:foo-build> scalaVersion
-[info] $example_scala213$
+[info] {{scala3_example_version}}
 ```
 
 ### Save the session to build.sbt
@@ -169,7 +167,7 @@ sbt:foo-build> session save
 `build.sbt` file should now contain:
 
 ```scala
-ThisBuild / scalaVersion := "$example_scala213$"
+scalaVersion := "{{scala3_example_version}}"
 
 ```
 
@@ -177,7 +175,9 @@ ThisBuild / scalaVersion := "$example_scala213$"
 
 Using an editor, change `build.sbt` as follows:
 
-@@snip [name]($root$/src/sbt-test/ref/example-name/build.sbt) {}
+```scala
+{{#include ../sbt-test/ref/example-name/build.sbt}}
+```
 
 ### Reload the build
 
@@ -186,7 +186,7 @@ Use the `reload` command to reload the build. The command causes the
 
 ```
 sbt:foo-build> reload
-[info] welcome to sbt 1.10.1 (Eclipse Adoptium Java 17.0.8)
+[info] welcome to sbt 2.x (Azul Systems, Inc. Java)
 [info] loading project definition from /tmp/foo-build/project
 [info] loading settings for project hello from build.sbt ...
 [info] set current project to Hello (in build file:/tmp/foo-build/)
@@ -199,7 +199,9 @@ Note that the prompt has now changed to `sbt:Hello>`.
 
 Using an editor, change `build.sbt` as follows:
 
-@@snip [example-test]($root$/src/sbt-test/ref/example-test/build.sbt) {}
+```scala
+{{#include ../sbt-test/ref/example-test/build.sbt}}
+```
 
 Use the `reload` command to reflect the change in `build.sbt`.
 
@@ -224,33 +226,34 @@ sbt:Hello> ~testQuick
 Leaving the previous command running, create a file named `src/test/scala/example/HelloSuite.scala`
 using an editor:
 
-@@snip [example-test]($root$/src/sbt-test/ref/example-test/src/test/scala/example/HelloSuite.scala) {}
+```scala
+{{#include ../sbt-test/ref/example-test/src/test/scala/example/HelloSuite.scala}}
+```
 
 `~testQuick` should pick up the change:
 
 ```
-[info] 2. Monitoring source files for hello/testQuick...
-[info]    Press <enter> to interrupt or '?' for more options.
-[info] Build triggered by /tmp/foo-build/src/test/scala/example/HelloSuite.scala. Running 'testQuick'.
-[info] compiling 1 Scala source to /tmp/foo-build/target/scala-2.13/test-classes ...
-HelloSuite:
-==> X HelloSuite.Hello should start with H  0.004s munit.FailException: /tmp/foo-build/src/test/scala/example/HelloSuite.scala:4 assertion failed
-3:  test("Hello should start with H") {
-4:    assert("hello".startsWith("H"))
-5:  }
+example.HelloSuite:
+==> X example.HelloSuite.Hello should start with H  0.012s munit.FailException: /tmp/foo-build/src/test/scala/example/HelloSuite.scala:5 assertion failed
+4:  test("Hello should start with H") {
+5:    assert("hello".startsWith("H"))
+6:  }
     at munit.FunSuite.assert(FunSuite.scala:11)
-    at HelloSuite.\$anonfun\$new\$1(HelloSuite.scala:4)
+    at example.HelloSuite.$init$$$anonfun$1(HelloSuite.scala:5)
 [error] Failed: Total 1, Failed 1, Errors 0, Passed 0
 [error] Failed tests:
-[error]         HelloSuite
+[error]   example.HelloSuite
 [error] (Test / testQuick) sbt.TestsFailedException: Tests unsuccessful
+[error] elapsed time: 1 s, cache 50%, 3 disk cache hits, 3 onsite tasks
 ```
 
 ### Make the test pass
 
 Using an editor, change `src/test/scala/example/HelloSuite.scala` to:
 
-@@snip [example-test]($root$/src/sbt-test/ref/example-test/changes/HelloSuite.scala) {}
+```scala
+{{#include ../sbt-test/ref/example-test/changes/HelloSuite.scala}}
+```
 
 Confirm that the test passes, then press `Enter` to exit the continuous test.
 
@@ -258,7 +261,9 @@ Confirm that the test passes, then press `Enter` to exit the continuous test.
 
 Using an editor, change `build.sbt` as follows:
 
-@@snip [example-library]($root$/src/sbt-test/ref/example-library/build.sbt) {}
+```scala
+{{#include ../sbt-test/ref/example-library/build.sbt}}
+```
 
 Use the `reload` command to reflect the change in `build.sbt`.
 
@@ -268,14 +273,11 @@ We can find out the current weather in New York.
 
 ```scala
 sbt:Hello> console
-[info] Starting scala interpreter...
-Welcome to Scala 2.13.12 (OpenJDK 64-Bit Server VM, Java 17).
+Welcome to Scala 3.3.3 (1.8.0_402, Java OpenJDK 64-Bit Server VM).
 Type in expressions for evaluation. Or try :help.
 
-scala> :paste
-// Entering paste mode (ctrl-D to finish)
-
-import sttp.client4.quick._
+scala>
+import sttp.client4.quick.*
 import sttp.client4.Response
 
 val newYorkLatitude: Double = 40.7143
@@ -322,7 +324,9 @@ scala> :q // to quit
 
 Change `build.sbt` as follows:
 
-@@snip [example-sub1]($root$/src/sbt-test/ref/example-sub1/build.sbt) {}
+```scala
+{{#include ../sbt-test/ref/example-sub1/build.sbt}}
+```
 
 Use the `reload` command to reflect the change in `build.sbt`.
 
@@ -345,13 +349,17 @@ sbt:Hello> helloCore/compile
 
 Change `build.sbt` as follows:
 
-@@snip [example-sub2]($root$/src/sbt-test/ref/example-sub2/build.sbt) {}
+```scala
+{{#include ../sbt-test/ref/example-sub2/build.sbt}}
+```
 
 ### Broadcast commands
 
 Set aggregate so that the command sent to `hello` is broadcast to `helloCore` too:
 
-@@snip [example-sub3]($root$/src/sbt-test/ref/example-sub3/build.sbt) {}
+```scala
+{{#include ../sbt-test/ref/example-sub3/build.sbt}}
+```
 
 After `reload`, `~testQuick` now runs on both subprojects:
 
@@ -365,15 +373,15 @@ Press `Enter` to exit the continuous test.
 
 Use `.dependsOn(...)` to add a dependency on other subprojects. Also let's move the toolkit dependency to `helloCore`.
 
-@@snip [example-sub4]($root$/src/sbt-test/ref/example-sub4/build.sbt) {}
+```scala
+{{#include ../sbt-test/ref/example-sub4/build.sbt}}
+```
 
 ### Parse JSON using uJson
 
 Let's use uJson from the toolkit in `helloCore`.
 
-@@snip [example-weather-build]($root$/src/sbt-test/ref/example-weather/build.sbt) {}
-
-After `reload`, add `core/src/main/scala/example/core/Weather.scala`:
+Add `core/src/main/scala/example/core/Weather.scala`:
 
 ```scala
 package example.core
@@ -381,8 +389,8 @@ package example.core
 import sttp.client4.quick._
 import sttp.client4.Response
 
-object Weather {
-  def temp() = {
+object Weather:
+  def temp() =
     val response: Response[String] = quickRequest
       .get(
         uri"https://api.open-meteo.com/v1/forecast?latitude=40.7143&longitude=-74.006&current_weather=true"
@@ -390,8 +398,7 @@ object Weather {
       .send()
     val json = ujson.read(response.body)
     json.obj("current_weather")("temperature").num
-  }
-}
+end Weather
 ```
 
 Next, change `src/main/scala/example/Hello.scala` as follows:
@@ -401,12 +408,9 @@ package example
 
 import example.core.Weather
 
-object Hello {
-  def main(args: Array[String]): Unit = {
-    val temp = Weather.temp()
-    println(s"Hello! The current temperature in New York is \$temp C.")
-  }
-}
+@main def main(args: String*): Unit =
+  val temp = Weather.temp()
+  println(s"Hello! The current temperature in New York is $temp C.")
 ```
 
 Let's run the app to see if it worked:
@@ -419,6 +423,7 @@ sbt:Hello> run
 Hello! The current temperature in New York is 22.7 C.
 ```
 
+<!--
 ### Add sbt-native-packager plugin
 
 Using an editor, create `project/plugins.sbt`:
@@ -478,6 +483,8 @@ Change `build.sbt` as follows:
 
 @@snip [example-weather-build3]($root$/src/sbt-test/ref/example-weather/changes/build3.sbt) {}
 
+-->
+
 ### Switch scalaVersion temporarily
 
 ```
@@ -499,6 +506,7 @@ sbt:Hello> scalaVersion
 
 This setting will go away after `reload`.
 
+<!--
 ### Inspect the dist task
 
 To find out more about `dist`, try `help` and `inspect`.
@@ -517,6 +525,8 @@ sbt:Hello> inspect tree dist
 [info]   +-Universal / dist = Task[java.io.File]
 ....
 ```
+
+-->
 
 ### Batch mode
 
