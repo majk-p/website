@@ -18,16 +18,6 @@ java -version
 # openjdk version "1.8.0_352"
 ```
 
-### Install sbt with **cs setup**
-
-Follow [Install](https://www.scala-lang.org/download/) page, and install Scala using Coursier.
-
-```bash
-cs setup
-```
-
-This should install the latest stable version of `sbt`.
-
 ### Installing from SDKMAN
 
 To install both JDK and sbt, consider using [SDKMAN](https://sdkman.io/).
