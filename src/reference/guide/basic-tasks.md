@@ -1,7 +1,7 @@
   [sbt-components]: ./sbt-components.md
 
-Working with an existing build
-==============================
+Basic tasks
+===========
 
 This page describes how to use sbt once you have set up your project.
 This page assumes you've read [sbt components][sbt-components].

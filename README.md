@@ -5,17 +5,6 @@ This project is the source for [scala-sbt.org](https://www.scala-sbt.org). It ge
 
 See [contributors](https://github.com/sbt/website/graphs/contributors) for the list of documentation contributors.
 
-[scala-sbt.org](https://www.scala-sbt.org) is powered by:
-
-* [Pamflet](http://www.foundweekends.org/pamflet/), a Scala-based documentation engine written by [@n8han][] (and some contributions from [@eed3si9n][]) generates the sbt 0.13/1.x documentation.
-
-* [Pandoc](https://pandoc.org/) [2.3.1](https://pandoc.org/releases.html#pandoc-2.3.1-28-september-2018), to generate pdf files.
-
-[@n8han]: https://github.com/n8han
-[@eed3si9n]: https://github.com/eed3si9n
-
-The site generation is driven by [sbt-site](https://github.com/sbt/sbt-site) and [sbt-ghpages](https://github.com/sbt/sbt-ghpages).
-
 ## Attention plugin authors
 
 The source for [Community plugins](https://www.scala-sbt.org/release/docs/Community-Plugins.html) page is at [src/reference/01-General-Info/02-Community-Plugins.md](https://github.com/sbt/website/edit/develop/src/reference/01-General-Info/02-Community-Plugins.md).
@@ -23,9 +12,33 @@ Add your plugin to this page and send us a pull request if your plugin is not al
 
 ## Setup
 
+## The Book of sbt
+
+The Book of sbt is written using [mdBook](https://rust-lang.github.io/mdBook/index.html) a command line tool to create books with Markdown.
+
+## Docusaurus (Landing Page)
+
+The landing page is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+
+### Local Development
+
+```
+$ yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn run build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
 ### Full setup
 
-The PDF generation is optional, and requires the following additional steps to install 
+The PDF generation is optional, and requires the following additional steps to install
 [TeX Live](https://www.tug.org/texlive/) and [Pandoc](https://pandoc.org/).
 
 #### On Ubuntu
@@ -44,28 +57,6 @@ These steps are derived from Haruhiko Okumura's instructions at
   [homebrew mactex formulae](https://formulae.brew.sh/cask/mactex)
 - update TeX Live package manager with `sudo tlmgr update --self --all` (this may take a while)
 - `brew install pandoc`
-
-## Docusaurus
-
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
-
-### Local Development
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn run build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-
 
 ## Usage
 
