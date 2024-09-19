@@ -21,5 +21,7 @@
   - [Caching](concepts/caching.md)
 - [Reference]()
   - [Remote cache setup](reference/remote-cache-setup.md)
+- [Recipes]()
+  - [Write hello world](recipes/hello-world.md)
 - [Appendix]()
   - [Setup notes](setup-notes.md)
