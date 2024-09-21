@@ -17,6 +17,7 @@
   - [sbt with IDEs](guide/IDE.md)
 - [Changes]()
   - [sbt 2.0 changes](changes/sbt-2.0-change-summary.md)
+  - [Migrating from sbt 1.x](changes/migrating-from-sbt-1.x.md)
 - [Concepts]()
   - [Caching](concepts/caching.md)
 - [Reference]()
