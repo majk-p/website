@@ -1,8 +1,8 @@
 How to write hello world
 ========================
 
-Problem
--------
+Objective
+---------
 
 I want to write a hello world program in Scala, and run it.
 

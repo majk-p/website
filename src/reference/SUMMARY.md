@@ -24,5 +24,8 @@
   - [Remote cache setup](reference/remote-cache-setup.md)
 - [Recipes]()
   - [Write hello world](recipes/hello-world.md)
+  - [Use sbt as Metals build server](recipes/use-sbt-as-metals-build-server.md)
+  - [Import to IntelliJ IDEA](recipes/import-to-intellij.md)
+  - [Use Neovim](recipes/use-neovim.md)
 - [Appendix]()
   - [Setup notes](setup-notes.md)
