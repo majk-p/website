@@ -19,6 +19,7 @@
   - [sbt 2.0 changes](changes/sbt-2.0-change-summary.md)
   - [Migrating from sbt 1.x](changes/migrating-from-sbt-1.x.md)
 - [Concepts]()
+  - [Command](concepts/command.md)
   - [Caching](concepts/caching.md)
 - [Reference]()
   - [Remote cache setup](reference/remote-cache-setup.md)
