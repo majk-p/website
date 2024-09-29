@@ -209,7 +209,7 @@ Use the `reload` command to reflect the change in `build.sbt`.
 sbt:Hello> reload
 ```
 
-### Run tests
+### Run incremental tests
 
 ```
 sbt:Hello> test
@@ -218,7 +218,7 @@ sbt:Hello> test
 ### Run incremental tests continuously
 
 ```
-sbt:Hello> ~testQuick
+sbt:Hello> ~test
 ```
 
 ### Write a test
@@ -230,7 +230,7 @@ using an editor:
 {{#include ../sbt-test/ref/example-test/src/test/scala/example/HelloSuite.scala}}
 ```
 
-`~testQuick` should pick up the change:
+`~test` should pick up the change:
 
 ```
 example.HelloSuite:
@@ -361,10 +361,10 @@ Set aggregate so that the command sent to `hello` is broadcast to `helloCore` to
 {{#include ../sbt-test/ref/example-sub3/build.sbt}}
 ```
 
-After `reload`, `~testQuick` now runs on both subprojects:
+After `reload`, `~test` now runs on both subprojects:
 
 ```scala
-sbt:Hello> ~testQuick
+sbt:Hello> ~test
 ```
 
 Press `Enter` to exit the continuous test.
@@ -539,7 +539,7 @@ $ sbt clean "testOnly HelloSuite"
 **Note**: Running in batch mode requires JVM spinup and JIT each time,
 so **your build will run much slower**.
 For day-to-day coding, we recommend using the sbt shell
-or a continuous test like `~testQuick`.
+or a continuous test like `~test`.
 
 ### sbt new command
 

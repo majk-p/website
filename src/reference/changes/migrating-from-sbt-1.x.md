@@ -16,11 +16,31 @@ version := "0.1.0"
 scalaVersion := "{{scala3_example_version}}"
 ```
 
-_Bare settings_, like the example above, are settings written directly in `build.sbt` without `settings(...)`. In sbt 1.x bare settings were project settings that applied only to the root subproject. In sbt 2.x, the bare settings in `build.sbt` are common settings that are injected to **all subprojects**.
+_Bare settings_, like the example above, are settings written directly in `build.sbt` without `settings(...)`.
+
+```admonish warning
+In sbt 1.x bare settings were project settings that applied only to the root subproject. In sbt 2.x, the bare settings in `build.sbt` are common settings that are injected to **all subprojects**.
+```
+
+```scala
+name := "root"
+publish / skip := true
+```
 
 ### Migrating ThisBuild
 
 In sbt 2.x, bare settings settings should no longer be scoped to `ThisBuild`. One benefit of the new _common settings_ over `ThisBuild` is that it would act in a more predictable delegation. These settings are inserted between plugins settings and those defined in `settings(...)`, meaning they can be used to define settings like `Compile / scalacOptions`, which was not possible with `ThisBuild`.
+
+Migrating to slash syntax
+-------------------------
+
+sbt 1.x supported both the sbt 0.13 style syntax and the slash syntax. sbt 2.x removes the support for the sbt 0.13 syntax, so use the slash syntax for both sbt shell and in `build.sbt`:
+
+```scala
+<project-id> / Config / intask / key
+```
+
+For example, `test:compile` will no longer work on the shell. Use `Test/compile` instead. See [syntactic Scalafix rule for unified slash syntax][syntactic-scalafix-rule-for-unified-slash-syntax] for semi-automated migration of `build.sbt` files.
 
 Changes to `%%`
 ---------------
@@ -37,5 +57,5 @@ libraryDependencies += "org.scala-js" %% "scalajs-dom" % "2.8.0"
 
 Use `.platform(Platform.jvm)` in case where JVM libraries are needed.
 
-
   [scala-incompatibility-table]: https://docs.scala-lang.org/scala3/guides/migration/incompatibility-table.html
+  [syntactic-scalafix-rule-for-unified-slash-syntax]: https://eed3si9n.com/syntactic-scalafix-rule-for-unified-slash-syntax/

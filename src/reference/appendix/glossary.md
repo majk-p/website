@@ -1,12 +1,8 @@
----
-out: Name-Index.html
----
-
   [Running]: Running.html
   [Scopes]: Scopes.html
   [Community-Plugins]: Communitiy-Plugins.html
   [Full-Def]: Full-Def.html
-  [Basic-Def]: Basic-Def.html
+  [build-definition-basics]: ../guide/build-definition-basics.md
   [Using-Plugins]: Using-Plugins.html
   [Task-Graph]: Task-Graph.html
   [Library-Management]: Library-Management.html
@@ -14,23 +10,61 @@ out: Name-Index.html
   [Paths]: Paths.html
   [Parsing-Input]: Parsing-Input.html
   [Mapping-Files]: Mapping-Files.html
-  [Cross-Build]: Cross-Build.html
+  [cross-building]: ../concepts/cross-building.html
   [Parsing-Input]: Parsing-Input.html
   [Commands]: Commands.html
   [Input-Tasks]: Input-Tasks.html
   [Build-State]: Build-State.html
   [ivy-configurations]: Library-Management.html#ivy-configurations
 
-Index
------
+Glossary
+========
 
+Symbols
+-------
+
+### `:=`, `+=`, `++=`
+
+These construct a [Setting](../../../../1.x/api/sbt/internal/util/Init\$Setting.html), which is the fundamental type in the [settings][build-definition-basics] system.
+
+### `%`
+
+This is used to build up a [ModuleID](../../../../1.x/api/sbt/librarymanagement/ModuleID.html).
+
+### `%%`
+
+This is similar to `%` except that it identifies a dependency that has been [cross built][cross-building].
+
+### `%%%`
+
+This is defined in [sbt-platform-deps](https://github.com/portable-scala/sbt-platform-deps) in sbt 1.x.
+
+C
+-
+
+### Command
+
+A system-level building block of sbt, often used to capture user interaction or IDE interaction. See [Command](../concepts/command.html).
+
+### Cross building
+
+The idea of building multiple targets from the same set of source file. This includes Scala cross building, targetting multiple versions of Scala releases; platform cross building, targetting JVM, Scala.JS, and Scala Native; and custom virtual axis like Spark versions.
+
+V
+-
+
+### `value`
+
+`.value` is used to denote a happens-before relationship from one task or setting to another. This method is special (it is a macro) and cannot be used except in `:=` or in the standalone construction methods `Def.setting` and `Def.task`.
+
+<!--
 This is an index of common methods, types, and values you might find in
 an sbt build definition. For command names, see
 [Running][Running]. For available plugins, see
 [the plugins list][Community-Plugins].
+-->
 
-### Values and Types
-
+<!--
 #### Dependency Management
 
 -   [ModuleID](../api/sbt/librarymanagement/ModuleID.html) is the type of a dependency
@@ -52,7 +86,9 @@ an sbt build definition. For command names, see
     also used for [scoping settings][Scopes].
 -   `Compile`, `Test`, `Runtime`, `Provided`, and `Optional` are
     predefined [configurations][ivy-configurations].
+-->
 
+<!--
 #### Settings and Tasks
 
 -   A [Setting](../api/sbt/internal/util/Init\$Setting.html) describes how to
@@ -85,7 +121,9 @@ an sbt build definition. For command names, see
 -   [Task](../api/sbt/Task.html) is the type of a task. A task is an
     action that runs on demand. This is in contrast to a setting, which
     is run once at project initialization.
+-->
 
+<!--
 #### Build Structure
 
 -   [AutoPlugin](../api/sbt/AutoPlugin.html) is the trait implemented for sbt
@@ -99,27 +137,20 @@ an sbt build definition. For command names, see
     build. It is mainly used by [Commands][Commands] and sometimes
     [Input Tasks][Input-Tasks]. See also [State and Actions][Build-State].
 
-### Methods
+-->
 
+<!--
 #### Settings and Tasks
 
 See the [Getting Started Guide][Basic-Def] for
 details.
 
--   `:=`, `+=`, `++=` These construct a
-    [Setting](../api/sbt/internal/util/Init\$Setting.html), which is the fundamental
-    type in the [settings][Basic-Def] system.
--   `value` This uses the value of another setting or task in the
-    definition of a new setting or task. This method is special (it is a
-    macro) and cannot be used except in the argument of one of the
-    setting definition methods above (:=, ...) or in the standalone
-    construction methods Def.setting and Def.task. See
-    [Task-Graph][Task-Graph] for
-    details.
 -   `in` specifies the [Scope](../api/sbt/Scope.html) or part of the
     [Scope](../api/sbt/Scope.html) of a setting being referenced. See
     [scopes][Scopes].
+-->
 
+<!--
 #### File and IO
 
 See [RichFile](../api/sbt/io/RichFile.html),
@@ -142,14 +173,13 @@ See [RichFile](../api/sbt/io/RichFile.html),
 -   `get` forces a [PathFinder](../api/sbt/io/PathFinder.html) (a
     call-by-name data structure) to a strict `Seq[File]` representation.
     This is a common name in Scala, used by types like Option.
+-->
 
+<!--
 #### Dependency Management
 
 See [Library Management][Library-Management] for full documentation.
 
--   `%` This is used to build up a [ModuleID](../api/sbt/librarymanagement/ModuleID.html).
--   `%%` This is similar to `%` except that it identifies a dependency
-    that has been [cross built][Cross-Build].
 -   `from` Used to specify the fallback URL for a dependency
 -   `classifier` Used to specify the classifier for a dependency.
 -   `at` Used to define a Maven-style resolver.
@@ -158,7 +188,9 @@ See [Library Management][Library-Management] for full documentation.
     intransitive.
 -   `hide` Marks a [Configuration](../api/sbt/librarymanagement/Configuration.html) as
     internal and not to be included in the published metadata.
+-->
 
+<!--
 #### Parsing
 
 These methods are used to build up
@@ -187,3 +219,4 @@ used for
 -   `examples`, `token` Tab completion
 -   `!!!` Provides an error message to use when the original parser
     doesn't match the input.
+-->
