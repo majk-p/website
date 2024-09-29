@@ -24,6 +24,7 @@
   - [Caching](concepts/caching.md)
 - [Reference]()
   - [sbt](reference/sbt.md)
+  - [sbt update](reference/sbt-update.md)
   - [Cross building setup](reference/cross-building-setup.md)
   - [Remote cache setup](reference/remote-cache-setup.md)
 - [Recipes]()
