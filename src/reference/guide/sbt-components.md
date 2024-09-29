@@ -4,11 +4,11 @@ sbt components
 sbt runner
 ----------
 
-An sbt build is executed using the `sbt` runner, also called "sbt-the-shell-script" to distinguish from other components. It's important to note is that sbt runner is designed to run **any version** of sbt.
+An sbt build is executed using `sbt` runner, also called "sbt-the-shell-script" to distinguish from other components. It's important to note is that sbt runner is designed to run **any version** of sbt.
 
 ### Specifying sbt version with project/build.properties
 
-The sbt runner executes a subcomponent called sbt launcher, which reads `project/build.properties` to determine the sbt version for the build, and downloads the artifacts if they haven't been cached:
+sbt runner executes a subcomponent called sbt launcher, which reads `project/build.properties` to determine the sbt version for the build, and downloads the artifacts if they haven't been cached:
 
 ```
 sbt.version={{sbt_version}}
@@ -21,16 +21,16 @@ This means that:
 
 ### sbtn (`sbt --client`)
 
-sbtn (native thin client) is a subcomponent of the sbt runner, called when you pass `--client` flag to the sbt runner, and is used to send commands to the sbt server. It is called sbtn because it is compiled to native code using GraalVM native-image. The protocol between sbtn and sbt server is stable enough that it should work between **most recent versions** of sbt.
+sbtn (native thin client) is a subcomponent of sbt runner, called when you pass `--client` flag to sbt runner, and is used to send commands to sbt server. It is called sbtn because it is compiled to native code using GraalVM native-image. The protocol between sbtn and sbt server is stable enough that it should work between **most recent versions** of sbt.
 
 sbt server
 ----------
 
-The sbt server is the actual build tool whose version is specified using `project/build.properties`. The sbt server acts as a cashier to take commands from sbtn and editors.
+sbt server is the actual build tool whose version is specified using `project/build.properties`. sbt server acts as a cashier to take commands from sbtn and editors.
 
 ### Coursier
 
-The sbt server runs [Couriser][coursier] as a subcomponent to resolve Scala library, Scala compiler, and any other library dependencies your build needs.
+sbt server runs [Couriser][coursier] as a subcomponent to resolve Scala library, Scala compiler, and any other library dependencies your build needs.
 
 ### Zinc
 
@@ -43,13 +43,13 @@ scalaVersion := "{{scala3_example_version}}"
 
 ### BSP server
 
-The sbt server supports [Build Server Protocol (BSP)](https://build-server-protocol.github.io/) to list build targets, build them, etc.
+sbt server supports [Build Server Protocol (BSP)](https://build-server-protocol.github.io/) to list build targets, build them, etc.
 This allows IDEs like IntelliJ and Metals to communicate with a running sbt server programmatically.
 
 Connecting to sbt server
 ------------------------
 
-Let's look at three ways of connecting to the sbt server.
+Let's look at three ways of connecting to sbt server.
 
 ### sbt shell using sbtn
 
