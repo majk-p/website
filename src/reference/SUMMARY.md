@@ -23,6 +23,7 @@
   - [Cross building](concepts/cross-building.md)
   - [Caching](concepts/caching.md)
 - [Reference]()
+  - [sbt](reference/sbt.md)
   - [Cross building setup](reference/cross-building-setup.md)
   - [Remote cache setup](reference/remote-cache-setup.md)
 - [Recipes]()
