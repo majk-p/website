@@ -50,6 +50,20 @@ A system-level building block of sbt, often used to capture user interaction or 
 
 The idea of building multiple targets from the same set of source file. This includes Scala cross building, targetting multiple versions of Scala releases; platform cross building, targetting JVM, Scala.JS, and Scala Native; and custom virtual axis like Spark versions.
 
+D
+-
+
+### Dependency resolution
+
+During library management, when multiple version candidates (e.g. `foo:2.2.0` and `foo:3.0.0`) are found for a library `foo` within a dependency graph, it is called a _dependency conflict_. The process of mediating the conflict into a single version is called _dependency resolution_. Often, this would result in the older version beging removed from the dependency graph, which is called an _eviction_ of `foo:2.2.0`. In some cases, an eviction is considered unsafe because the candidates are not replacable. See [sbt update](../reference/sbt-update.md).
+
+E
+-
+
+### Eviction
+
+See [dependency resolution](#dependency-resolution).
+
 V
 -
 
