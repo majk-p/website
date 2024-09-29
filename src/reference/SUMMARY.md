@@ -30,4 +30,5 @@
   - [Use sbt as Metals build server](recipes/use-sbt-as-metals-build-server.md)
   - [Import to IntelliJ IDEA](recipes/import-to-intellij.md)
   - [Use Neovim](recipes/use-neovim.md)
+- [Appendix: Glossary](appendix/glossary.md)
 - [Appendix: Setup notes](appendix/setup-notes.md)
