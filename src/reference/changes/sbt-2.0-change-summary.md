@@ -16,7 +16,8 @@ See also [Migrating from sbt 1.x](./migrating-from-sbt-1.x.md).
 - Bare settings are added to all subprojects, as opposed to just the root subproject, and thus replacing the role that `ThisBuild` has played. by [@eed3si9n][@eed3si9n] in [#6746][6746]
 - `test` task is changed to be incremental test that can cache test results. Use `testFull` for full test by [@eed3si9n][@eed3si9n] in [#7686][7686] 
 - sbt 2.x plugins are published with `_sbt2_3` suffix by [@eed3si9n][@eed3si9n] in [#7671][7671]
-- sbt 2.x adds `platform` setting so `ModuleID`'s `%%` operator can cross build on JVM as well as JS and Native, as opposed to `%%%` operator that was created in a plugin to workaround this issue. by [@eed3si9n][@eed3si9n] in [#6746][6746]
+- sbt 2.x adds `platform` setting so `ModuleID`'s `%%` operator can cross build on JVM as well as JS and Native, as opposed to `%%%` operator that was created in a plugin to workaround this issue, by [@eed3si9n][@eed3si9n] in [#6746][6746]
+- Dropped `useCoursier` setting so Coursier cannot be opted out, by [@eed3si9n][@eed3si9n] in [#7712][7712]
 
 ### Dropped dreprecations
 
@@ -41,5 +42,6 @@ See also:
   [7671]: https://github.com/sbt/sbt/pull/7671
   [7686]: https://github.com/sbt/sbt/pull/7686
   [7700]: https://github.com/sbt/sbt/pull/7700
+  [7712]: https://github.com/sbt/sbt/pull/7712
   [@eed3si9n]: https://github.com/eed3si9n
   [@adpi2]: https://github.com/adpi2
