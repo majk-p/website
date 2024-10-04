@@ -23,13 +23,31 @@ In sbt 1.x bare settings were project settings that applied only to the root sub
 ```
 
 ```scala
-name := "root"
+name := "root" // every subprojects will be named root!
 publish / skip := true
 ```
 
 ### Migrating ThisBuild
 
 In sbt 2.x, bare settings settings should no longer be scoped to `ThisBuild`. One benefit of the new _common settings_ over `ThisBuild` is that it would act in a more predictable delegation. These settings are inserted between plugins settings and those defined in `settings(...)`, meaning they can be used to define settings like `Compile / scalacOptions`, which was not possible with `ThisBuild`.
+
+Cross building sbt plugins
+--------------------------
+
+In sbt 2.x, if you cross build an sbt plugin with Scala 3.x and 2.12.x, it will automatically cross build against sbt 1.x and sbt 2.x:
+
+```scala
+// using sbt 2.x
+lazy val plugin = (projectMatrix in file("plugin"))
+  .enablePlugins(SbtPlugin)
+  .settings(
+    name := "sbt-vimquit",
+  )
+  .jvmPlatform(scalaVersions = Seq("3.3.3", "2.12.20"))
+```
+
+If you use `projectMatrix`, make sure to move the plugin to a subdirectory like `plugin/`. Otherwise, the synthetic root project will also pick up the `src/`.
+Use sbt 1.10.2 or later to cross build from sbt 1.x side.
 
 Migrating to slash syntax
 -------------------------
