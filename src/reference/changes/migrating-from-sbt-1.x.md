@@ -6,7 +6,12 @@ Changing `build.sbt` DSL to Scala 3.x
 
 As a reminder, users can build either Scala 2.x or Scala 3.x programs using either sbt 1.x or sbt 2.x. However, the Scala that underlies the `build.sbt` DSL is determined by the sbt version. In sbt 2.0, we are migrating to Scala 3.x.
 
-This means that if you implement custom tasks or sbt plugins for sbt 2.x, it must be done using Scala 3.x. See [Scala 3.x incompatibility table][scala-incompatibility-table] for the list of potential migration points.
+This means that if you implement custom tasks or sbt plugins for sbt 2.x, it must be done using Scala 3.x. See [Scala 3.x incompatibility table][scala-incompatibility-table] and [Scala 2 with -Xsource:3][tooling-scala2-xsource3].
+
+```scala
+// This works on Scala 2.12.20 under -Xsource:3
+import sbt.{ given, * }
+```
 
 Bare settings changes
 ---------------------
@@ -77,3 +82,4 @@ Use `.platform(Platform.jvm)` in case where JVM libraries are needed.
 
   [scala-incompatibility-table]: https://docs.scala-lang.org/scala3/guides/migration/incompatibility-table.html
   [syntactic-scalafix-rule-for-unified-slash-syntax]: https://eed3si9n.com/syntactic-scalafix-rule-for-unified-slash-syntax/
+  [tooling-scala2-xsource3]: https://docs.scala-lang.org/scala3/guides/migration/tooling-scala2-xsource3.html
