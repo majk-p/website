@@ -52,7 +52,29 @@ lazy val plugin = (projectMatrix in file("plugin"))
 ```
 
 If you use `projectMatrix`, make sure to move the plugin to a subdirectory like `plugin/`. Otherwise, the synthetic root project will also pick up the `src/`.
-Use sbt 1.10.2 or later to cross build from sbt 1.x side.
+
+### Cross building sbt plugin with sbt 1.x
+
+Use sbt 1.10.2 or later, if you want to cross build using sbt 1.x.
+
+```scala
+// using sbt 1.x
+lazy val scala212 = "2.12.20"
+lazy val scala3 = "3.3.4"
+ThisBuild / crossScalaVersions := Seq(scala212, scala3)
+
+lazy val plugin = (project in file("plugin"))
+  .enablePlugins(SbtPlugin)
+  .settings(
+    name := "sbt-vimquit",
+    (pluginCrossBuild / sbtVersion) := {
+      scalaBinaryVersion.value match {
+        case "2.12" => "1.5.8"
+        case _      => "{{sbt_version}}"
+      }
+    },
+  )
+```
 
 Migrating to slash syntax
 -------------------------
