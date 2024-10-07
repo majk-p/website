@@ -44,7 +44,7 @@ sbt:demo> show someKey
 [success] elapsed time: 0 s, cache 100%, 1 disk cache hit
 ```
 
-### Caching is serializaiton-hard
+### Caching is serialization-hard
 
 To participate in the automatic caching, the input keys (e.g. `name` and `version`) must provide a given for `sjsonnew.HashWriter` typeclass and return type must provide a given for `sjsonnew.JsonFormat`. [Contraband](https://www.scala-sbt.org/contraband/) can be used to generate sjson-new codecs.
 
