@@ -44,6 +44,44 @@ sbt:demo> show someKey
 [success] elapsed time: 0 s, cache 100%, 1 disk cache hit
 ```
 
+### Caching is serializaiton-hard
+
+To participate in the automatic caching, the input keys (e.g. `name` and `version`) must provide a given for `sjsonnew.HashWriter` typeclass and return type must provide a given for `sjsonnew.JsonFormat`. [Contraband](https://www.scala-sbt.org/contraband/) can be used to generate sjson-new codecs.
+
+Caching files
+-------------
+
+Caching files (e.g. `java.io.File`) requires its own consideration, not because it's technically difficult, but mostly because of the ambiguity and assumptions when files are involved. When we say a "file" it could actually mean:
+
+1. Relative path from a well-known location
+2. Materialized actual file
+3. A unique proof of a file, or a content hash
+
+Technically speaking, a `File` just means the file path, so we can deserialize just the filename such as `target/a/b.jar`. This will fail the downstream tasks if they assumed that `target/a/b.jar` would exist in the file system. For clarity, and also for avoiding to capture absolute paths, sbt 2.x provides three separate types for the three cases.
+
+- `xsbti.VirtualFileRef` is used to mean just the relative path, which is equivalent to passing a string
+- `xsbti.VirtualFile` represents a materialized file with contents, which could be a virtual file or a file in your disk
+
+However, for the purpose of hermetic build, neither is great to represent a list of files. Having just the filename alone doesn't guarantee that the file will be the same, and carrying the entire content of the files is too inefficient in a JSON etc.
+
+This is where the mysterious third option, a unique proof of file comes in handy. In addition to the relative path, `HashedVirtualFileRef` tracks the SHA-256 content hash and the file size. This can easily be serialized to JSON yet we can reference the exact file.
+
+### The effect of file creation
+
+There are many tasks that generate file that do not use `VirtualFile` as the return type. For example, `compile` returns `Analysis` instead, and `*.class` file generation happens as a _side effect_ in sbt 1.x.
+
+To participate in caching, we need to declare these effects as something we care about.
+
+```scala
+someKey := Def.cachedTask {
+  val conv = fileConverter.value
+  val out: java.nio.file.Path = createFile(...)
+  val vf: xsbti.VirtualFile = conv.toVirtualFile(out)
+  Def.declareOutput(vf)
+  vf: xsbti.HashedVirtualFileRef
+}
+```
+
 Remote caching
 --------------
 

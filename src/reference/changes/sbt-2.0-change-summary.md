@@ -1,3 +1,6 @@
+
+  [Caching Files]: ../concepts/caching.md#caching-files
+
 sbt 2.0 changes (draft)
 =======================
 
@@ -18,6 +21,7 @@ See also [Migrating from sbt 1.x](./migrating-from-sbt-1.x.md).
 - sbt 2.x plugins are published with `_sbt2_3` suffix by [@eed3si9n][@eed3si9n] in [#7671][7671]
 - sbt 2.x adds `platform` setting so `ModuleID`'s `%%` operator can cross build on JVM as well as JS and Native, as opposed to `%%%` operator that was created in a plugin to workaround this issue, by [@eed3si9n][@eed3si9n] in [#6746][6746]
 - Dropped `useCoursier` setting so Coursier cannot be opted out, by [@eed3si9n][@eed3si9n] in [#7712][7712]
+- `Key.Classpath` is changed to be an alias of the `Seq[Attributed[xsbti.HashedVirtualFileRef]]` type, instead of `Seq[Attributed[File]]`. Similarly, some task keys that used to return `File` have changed to return `HashedVirtualFileRef` instead. See [Caching Files].
 
 ### Dropped dreprecations
 
