@@ -1,7 +1,8 @@
-const sbtVersion = "1.10.2";
+const sbtVersion = "1.10.3";
 const scala3ExampleVersion = "3.3.3";
 const releasesBase = "https://github.com/sbt/sbt/releases/download";
 const VersionList = [
+  { v: "1.10.3" },
   { v: "1.10.2" },
   { v: "1.10.1" },
   { v: "1.10.0" },
