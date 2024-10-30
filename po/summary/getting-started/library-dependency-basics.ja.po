@@ -1,0 +1,157 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:08:34-04:00\n"
+"PO-Revision-Date: 2024-10-30T01:14:09-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/guide/library-dependency-basics.md:1
+msgid "Library dependency basics"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:4
+msgid ""
+"This page explains the basics of library dependency management using sbt."
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:6
+msgid ""
+"sbt uses [Coursier](https://get-coursier.io/) to implement managed "
+"dependencies, so if you're familiar with package managers like Coursier, "
+"npm, PIP, etc you won't have much trouble."
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:10
+msgid "The `libraryDependencies` key"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:13
+msgid ""
+"Declaring a dependency looks like this, where `groupId`, `artifactId`, and "
+"`revision` are strings:"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:20
+msgid ""
+"or like this, where `configuration` can be a string or a `Configuration` "
+"value (such as `Test`):"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:26
+msgid "When you run:"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:32
+msgid ""
+"sbt will automatically resolve the dependencies and download the JAR files."
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:34
+msgid "Getting the right Scala version with `%%`"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:36
+msgid ""
+"If you use `organization %% moduleName % version` rather than `organization "
+"% moduleName % version` (the difference is the double `%%` after the "
+"`organization`), sbt will add your project's binary Scala version to the "
+"artifact name. This is just a shortcut. You could write this without the `%"
+"%`:"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:42
+#: src/reference/guide/library-dependency-basics.md:49
+#: src/reference/guide/library-dependency-basics.md:74
+#: src/reference/guide/library-dependency-basics.md:75
+msgid "\"org.scala-lang\""
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:42
+msgid "\"toolkit_3\""
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:42
+#: src/reference/guide/library-dependency-basics.md:49
+#: src/reference/guide/library-dependency-basics.md:71
+msgid "\"0.2.0\""
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:45
+msgid ""
+"Assuming the `scalaVersion` for your build is 3.x, the following is "
+"identical (note the double `%%` after `\"toolkit\"`):"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:49
+#: src/reference/guide/library-dependency-basics.md:74
+msgid "\"toolkit\""
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:52
+msgid ""
+"The idea is that many dependencies are compiled for multiple Scala versions, "
+"and you'd like to get the one that matches your project to ensure binary "
+"compatibility."
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:56
+msgid "Tracking dependencies in one place"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:59
+msgid ""
+"`.scala` files under `project` becomes part of the build definition, which "
+"we can use to track dependencies in one place by creating a file named "
+"`project/Dependencies.scala`."
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:65
+msgid "// place this file at project/Dependencies.scala"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:70
+msgid "// versions"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:73
+msgid "// libraries"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:75
+msgid "\"toolkit-test\""
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:79
+msgid ""
+"The `Dependencies` object will be available in `build.sbt`. To make it "
+"easier to use the `val`s defined in it, import `Dependencies.*` in your "
+"build.sbt file."
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:85
+msgid "\"3.3.3\""
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:86
+msgid "\"something\""
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:91
+msgid "Viewing library dependencies"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:94
+msgid ""
+"Type in `Compile/dependencyTree` in the sbt shell to show the library "
+"dependency tree, including the transitive dependencies:"
+msgstr ""
+
+#: src/reference/guide/library-dependency-basics.md:100
+msgid "This should display something like the following:"
+msgstr ""

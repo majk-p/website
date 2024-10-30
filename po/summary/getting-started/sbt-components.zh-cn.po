@@ -1,0 +1,177 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:50:36-04:00\n"
+"PO-Revision-Date: 2024-10-30T03:50:36-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-cn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/guide/sbt-components.md:1
+msgid "sbt components"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:4
+msgid "sbt runner"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:7
+msgid ""
+"An sbt build is executed using `sbt` runner, also called \"sbt-the-shell-"
+"script\" to distinguish from other components. It's important to note is "
+"that sbt runner is designed to run **any version** of sbt."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:9
+msgid "Specifying sbt version with project/build.properties"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:11
+msgid ""
+"sbt runner executes a subcomponent called sbt launcher, which reads `project/"
+"build.properties` to determine the sbt version for the build, and downloads "
+"the artifacts if they haven't been cached:"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:17
+msgid "This means that:"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:19
+msgid ""
+"Anyone who checkouts your build would get the same sbt version, regardless "
+"of _sbt runner_ they may have installed on their machines."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:20
+msgid ""
+"The change of sbt version can be tracked in a version control system, like "
+"git."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:22
+msgid "sbtn (`sbt --client`)"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:24
+msgid ""
+"sbtn (native thin client) is a subcomponent of sbt runner, called when you "
+"pass `--client` flag to sbt runner, and is used to send commands to sbt "
+"server. It is called sbtn because it is compiled to native code using "
+"GraalVM native-image. The protocol between sbtn and sbt server is stable "
+"enough that it should work between **most recent versions** of sbt."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:26
+msgid "sbt server"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:29
+msgid ""
+"sbt server is the actual build tool whose version is specified using "
+"`project/build.properties`. sbt server acts as a cashier to take commands "
+"from sbtn and editors."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:31
+msgid "Coursier"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:33
+msgid ""
+"sbt server runs [Couriser](https://get-coursier.io/) as a subcomponent to "
+"resolve Scala library, Scala compiler, and any other library dependencies "
+"your build needs."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:35
+msgid "Zinc"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:37
+msgid ""
+"Zinc is the incremental compiler for Scala, developed and maintained by sbt "
+"project. An often overlooked aspect of Zinc is that Zinc provides a stable "
+"API to invoke **any modern versions** of Scala compiler. Combined with the "
+"fact that Coursier can resolve any Scala version, with sbt we can invoke any "
+"modern versions of Scala just by writing a single line `build.sbt`:"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:41
+msgid "\"3.3.3\""
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:44
+msgid "BSP server"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:46
+msgid ""
+"sbt server supports [Build Server Protocol (BSP)](https://build-server-"
+"protocol.github.io/) to list build targets, build them, etc. This allows "
+"IDEs like IntelliJ and Metals to communicate with a running sbt server "
+"programmatically."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:49
+msgid "Connecting to sbt server"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:52
+msgid "Let's look at three ways of connecting to sbt server."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:54
+msgid "sbt shell using sbtn"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:56
+msgid "Run `sbt --client` in the working directory of your build:"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:62
+msgid "This should display something like the following:"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:78
+msgid ""
+"Running sbt with no command line arguments starts sbt shell. sbt shell has a "
+"command prompt (with tab completion and history!)."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:80
+msgid "For example, you could type `compile` at the sbt shell:"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:86
+msgid "To `compile` again, press up arrow and then enter."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:88
+msgid ""
+"To leave sbt shell, type `exit` or use `Ctrl-D` (Unix) or `Ctrl-Z` (Windows)."
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:90
+msgid "Batch mode using sbtn"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:92
+msgid "You can also run sbt in batch mode:"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:104
+msgid "Shutting down sbt server"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:106
+msgid "Run the following to shutdown all sbt servers on your machine:"
+msgstr ""
+
+#: src/reference/guide/sbt-components.md:112
+msgid "Or the following to shutdown just the current one:"
+msgstr ""

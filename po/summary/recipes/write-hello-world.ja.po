@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:08:34-04:00\n"
+"PO-Revision-Date: 2024-10-30T01:14:09-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/recipes/hello-world.md:1
+msgid "How to write hello world"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:4
+msgid "Objective"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:7
+msgid "I want to write a hello world program in Scala, and run it."
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:9
+msgid "Steps"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:12
+msgid "Create a fresh directory, like `hello_scala/`"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:13
+msgid ""
+"Create a directory named `project/` under `hello_scala/`, and create "
+"`project/build.properties` with"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:17
+msgid "Under `hello_scala/`, create `build.sbt`:"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:19
+msgid "\"3.3.3\""
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:21
+msgid "Under `hello_scala/`, create `Hello.scala`:"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:24
+msgid "s\"Hello ${"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:24
+msgid "}\""
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:26
+msgid "Navigate to `hello_scala/` from the terminal, and run `sbt`:"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:30
+msgid "When the prompt appears, type `run`:"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:34
+msgid "Type `exit` to exit the sbt shell:"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:39
+msgid "Alternatives"
+msgstr ""
+
+#: src/reference/recipes/hello-world.md:42
+msgid ""
+"When you're in a hurry, you can run `sbt init` in a fresh directory, and "
+"select the first template."
+msgstr ""

@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:50:36-04:00\n"
+"PO-Revision-Date: 2024-10-30T03:50:36-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-cn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:1
+msgid "Use sbt as Metals build server"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:13
+msgid "Objective"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:16
+msgid ""
+"I want to use [Metals](https://scalameta.org/metals/) on VS Code with sbt as "
+"the build server."
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:18
+msgid "Steps"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:21
+msgid "To use Metals on VS Code:"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:23
+msgid "Install Metals from Extensions tab:<br> ![Metals](../files/metals0.png)"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:25
+msgid "Open a directory containing a `build.sbt` file."
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:26
+msgid ""
+"From the menubar, run View > Command Palette... (`Cmd-Shift-P` on macOS) "
+"\"Metals: Switch build server\", and select \"sbt\"<br> ![Metals](../files/"
+"metals2.png)"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:28
+msgid ""
+"Once the import process is complete, open a Scala file to see that code "
+"completion works:<br> ![Metals](../files/metals3.png)"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:31
+msgid "Use the following setting to opt-out some of the subprojects from BSP."
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:37
+msgid ""
+"When you make changes to the code and save them (`Cmd-S` on macOS), Metals "
+"will invoke sbt to do the actual building work."
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:40
+msgid "Interactive debugging on VS Code"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:42
+msgid ""
+"Metals supports interactive debugging by setting break points in the code:"
+"<br> ![Metals](../files/metals4.png)"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:44
+msgid ""
+"Interactive debugging can be started by right-clicking on an unit test, and "
+"selecting \"Debug Test.\" When the test hits a break point, you can inspect "
+"the values of the variables:<br> ![Metals](../files/metals5.png)"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:48
+msgid ""
+"See [Debugging](https://code.visualstudio.com/docs/editor/debugging) page on "
+"VS Code documentation for more details on how to navigate an interactive "
+"debugging session."
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:50
+msgid "Logging into sbt session"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:52
+msgid ""
+"While Metals uses sbt as the build server, we can also log into the same sbt "
+"session using a thin client."
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:54
+msgid ""
+"From Terminal section, type in `sbt --client`<br> ![Metals](../files/metals6."
+"png)"
+msgstr ""
+
+#: src/reference/recipes/use-sbt-as-metals-build-server.md:57
+msgid ""
+"This lets you log into the sbt session Metals has started. In there you can "
+"call `testOnly` and other tasks with the code already compiled."
+msgstr ""

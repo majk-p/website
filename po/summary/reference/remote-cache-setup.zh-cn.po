@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:50:36-04:00\n"
+"PO-Revision-Date: 2024-10-30T03:50:36-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-cn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/reference/remote-cache-setup.md:1
+msgid "Remote cache setup"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:4
+msgid ""
+"This page covers remote caching setup. See [Caching](../concepts/caching."
+"html) for general explanation of the caching system."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:6
+msgid "gRPC remote cache"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:9
+msgid ""
+"While there might be multiple remote cache store implemention in the future, "
+"sbt 2.0 ships with a gRPC client that is compatible with the Bazel remote "
+"cache backends. To configure sbt 2.x, add the following to `project/plugins."
+"sbt`"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:15
+msgid ""
+"There are many Bazel remote cache backends, both open source and commercial "
+"solutions. While this page documents is not an exhaustive list of all Bazel "
+"remote cache implementations, hopefully it shows how sbt 2.x can be set up "
+"for wide array of them."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:17
+msgid "Authentication"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:19
+msgid ""
+"There are a few flavors of [gRPC authentication](https://grpc.io/docs/guides/"
+"auth/), and Bazel remote cache backends use various kind of them:"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:21
+msgid "Unauthenticated. Useful for testing."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:22
+msgid "Default TLS/SSL."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:23
+msgid "TLS/SSL with custom server certificate."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:24
+msgid "TTL/SSL with custom server and client certificate, mTLS."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:25
+msgid "Default TLS/SSL with API token header."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:27
+msgid "bazel-remote without authentication"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:29
+msgid ""
+"You can grab the code from [buchgr/bazel-remote](https://github.com/buchgr/"
+"bazel-remote) and run it on a laptop using Bazel:"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:37
+msgid "To configure sbt 2.x, add the following to `project/plugins.sbt`"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:43
+msgid "and append the following to `build.sbt`:"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:46
+msgid "\"grpc://localhost:2024\""
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:49
+msgid "bazel-remote with mTLS"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:51
+msgid ""
+"In a real environment, mTLS can ensure that the transport is encrypted and "
+"mutually authenticated. bazel-remote can be started with something like the "
+"follows:"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:62
+msgid "sbt 2.x setting would look like this in this scenario:"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:65
+msgid "\"grpcs://localhost:2024\""
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:66
+msgid "\"/tmp/sslcert/ca.crt\""
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:67
+msgid "\"/tmp/sslcert/client.crt\""
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:68
+msgid "\"/tmp/sslcert/client.pem\""
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:71
+msgid "Note the `grpcs://`, as opposed to `grpc://`."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:73
+msgid "EngFlow"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:75
+msgid ""
+"[EngFlow GmbH](https://www.engflow.com/) is a build solution company founded "
+"in 2020 by core members of Bazel team, providing build analytics and remote "
+"execution backend for Bazel, which includes remote cache."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:77
+msgid ""
+"After signing up for trial on <https://my.engflow.com/>, the page instructs "
+"you to start a trial cluster using a docker. If you followed the "
+"instruction, this should start a remote cache service on port 8080. The sbt "
+"2.x configuration would look like this for the trial cluster:"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:80
+msgid "\"grpc://localhost:8080\""
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:83
+msgid "BuildBuddy"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:85
+msgid ""
+"[BuildBuddy](https://www.buildbuddy.io/) is a build solution company founded "
+"by ex-Google engineers, providing build analytics and remote execution "
+"backend for Bazel. It's also available open source as [buildbuddy-io/"
+"buildbuddy](https://github.com/buildbuddy-io/buildbuddy)."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:87
+msgid ""
+"After signing up, BuildBuddy Personal plan lets you use BuildBuddy across "
+"the Internet."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:89
+msgid ""
+"From <https://app.buildbuddy.io/>, go to Settings, and change the "
+"Organization URL to `<something>.buildbuddy.io`."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:90
+msgid ""
+"Next, go to Quickstart and take note of the URLs and `--remote_headers`."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:91
+msgid ""
+"Create a file called `$HOME/.sbt/buildbuddy_credential.txt` and put in the "
+"API key:"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:97
+#: src/reference/reference/remote-cache-setup.md:115
+msgid "The sbt 2.x configuration would look like this:"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:100
+msgid "\"grpcs://something.buildbuddy.io\""
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:101
+msgid "\"buildbuddy_credential.txt\""
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:104
+msgid "NativeLink"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:106
+msgid ""
+"[NativeLink](https://docs.nativelink.dev/) is an open-source Bazel remote "
+"execution backend implementated in Rust with emphasis on performance. As of "
+"June 2024, there's NativeLink Cloud in beta."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:108
+msgid ""
+"From <https://app.nativelink.com/>, go to Quickstart and take note of the "
+"URLs and `--remote_header`."
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:109
+msgid ""
+"Create a file called `$HOME/.sbt/nativelink_credential.txt` and put in the "
+"API key:"
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:118
+msgid "\"grpcs://something.build-faster.nativelink.net\""
+msgstr ""
+
+#: src/reference/reference/remote-cache-setup.md:119
+msgid "\"nativelink_credential.txt\""
+msgstr ""

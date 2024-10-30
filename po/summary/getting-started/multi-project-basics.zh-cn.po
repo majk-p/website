@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:50:36-04:00\n"
+"PO-Revision-Date: 2024-10-30T03:50:36-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-cn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/guide/multi-project-basics.md:7
+msgid "Multi project basics"
+msgstr ""
+
+#: src/reference/guide/multi-project-basics.md:10
+msgid ""
+"While a simple program can start out as a single-project build, it's more "
+"common for a build to split into smaller, multiple subprojects."
+msgstr ""
+
+#: src/reference/guide/multi-project-basics.md:13
+msgid ""
+"Each subproject in a build has its own source directories, generates its own "
+"JAR file when you run `packageBin`, and in general works like any other "
+"project."
+msgstr ""
+
+#: src/reference/guide/multi-project-basics.md:17
+msgid ""
+"A project is defined by declaring a lazy val of type [Project](../../api/sbt/"
+"Project.html). For example, :"
+msgstr ""
+
+#: src/reference/guide/multi-project-basics.md:21
+msgid "\"3.3.3\""
+msgstr ""
+
+#: src/reference/guide/multi-project-basics.md:23
+#: src/reference/guide/multi-project-basics.md:25
+msgid "\"core\""
+msgstr ""
+
+#: src/reference/guide/multi-project-basics.md:28
+#: src/reference/guide/multi-project-basics.md:31
+msgid "\"util\""
+msgstr ""
+
+#: src/reference/guide/multi-project-basics.md:35
+msgid ""
+"The name of the val is used as the subproject's ID, which is used to refer "
+"to the subproject at the sbt shell."
+msgstr ""

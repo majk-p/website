@@ -7,7 +7,7 @@ title = "The Book of sbt"
 
 [output.html]
 theme = "theme"
-additional-css = ["src/reference/custom-202409.css", "src/reference/mdbook-admonish.css"]
+additional-css = ["src/reference/custom-202410.css", "src/reference/mdbook-admonish.css"]
 cname = "www.scala-sbt.org"
 
 [preprocessor.variables]
@@ -21,3 +21,9 @@ scala2_13_example_version = "2.13.15"
 [preprocessor.admonish]
 command = "mdbook-admonish"
 assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
+
+[preprocessor.gettext]
+after = ["links"]
+
+[build]
+extra-watch-dirs = ["po"]

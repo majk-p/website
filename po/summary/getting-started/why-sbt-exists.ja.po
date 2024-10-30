@@ -1,0 +1,146 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:08:34-04:00\n"
+"PO-Revision-Date: 2024-10-30T01:14:09-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/guide/why-sbt-exists.md:1
+msgid "Why sbt exists"
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:4
+msgid "Preliminaries"
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:7
+msgid ""
+"In Scala, a library or a program is compiled using the Scala compiler, "
+"`scalac`, as documented in the [Scala 3 Book](https://docs.scala-lang.org/"
+"scala3/book/taste-hello-world.html):"
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:10
+msgid "\"Hello, World!\""
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:19
+msgid ""
+"This process gets tedious and slow if we were to invoke `scalac` directly "
+"since we'd have to pass all the Scala source file names."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:21
+msgid ""
+"Furthermore, most non-trivial programs will likely have library "
+"dependencies, and will therefore also depend transitively on their "
+"dependencies. This is doubly complicated for Scala ecosystem because we have "
+"Scala 2.12, 2.13 ecosystem, Scala 3.x ecosystem, JVM, JS, and Native "
+"platforms."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:24
+msgid ""
+"Rather than working with JAR files and `scalac`, we can avoid manual toil by "
+"introducing a higher-level subproject abstraction and by using a build tool."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:26
+msgid "sbt"
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:29
+msgid ""
+"_sbt_ is a simple build tool created for Scala and Java. It lets us declare "
+"subprojects and their various dependencies and custom tasks to ensure that "
+"we'll always get a fast, repeatable build."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:32
+msgid "To accomplish this goal, sbt does several things:"
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:34
+msgid "The version of sbt itself is tracked in `project/build.properties`."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:35
+msgid ""
+"Defines a domain-specific language (DSL) called **build.sbt DSL** that can "
+"declare the Scala version and other subproject information in `build.sbt`."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:36
+msgid "Uses Coursier to fetch subprojects dependencies and their dependencies."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:37
+msgid "Invokes Zinc to incrementally compile Scala and Java sources."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:38
+msgid "Automatically runs tasks in parallel whenever possible."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:39
+msgid ""
+"Defines conventions on how packages are published to Maven repositories to "
+"interoperate with the wider JVM ecosystem."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:41
+msgid ""
+"To a large extent, sbt standardizes the commands needed to build a given "
+"program or library."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:43
+msgid "Why build.sbt DSL?"
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:46
+msgid ""
+"build.sbt DSL makes sbt a unique build tool, as opposed to other tools that "
+"use configuration file formats like YAML, TOML, and XML. Originally "
+"developed beween 2010 and 2013, `build.sbt` can start almost like a YAML "
+"file, declaring just `scalaVersion` and `libraryDependencies`, but it can "
+"supports more features to keep the build definition organized as the build "
+"grows larger:"
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:51
+msgid ""
+"To avoid repeating the same information, like the version number for a "
+"library, `build.sbt` can declare variables using `val`."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:52
+msgid ""
+"Uses Scala language constructs like `if` to define settings and tasks, when "
+"needed."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:53
+msgid ""
+"Statically typed settings and tasks, to catch typos and type errors before "
+"the build starts. The type also helps passing data from one task from "
+"another."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:54
+msgid ""
+"Provides **structured concurrency** via `Initialized[Task[A]]`. The DSL uses "
+"_direct style_ `.value` syntax to concisely define task graphs."
+msgstr ""
+
+#: src/reference/guide/why-sbt-exists.md:55
+msgid ""
+"Enpowers the community to extend sbt with plugins that provide custom tasks "
+"or language extensions like Scala.JS."
+msgstr ""

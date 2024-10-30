@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:08:34-04:00\n"
+"PO-Revision-Date: 2024-10-30T01:14:09-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/guide/IDE.md:7
+msgid "sbt with IDEs"
+msgstr ""
+
+#: src/reference/guide/IDE.md:10
+msgid ""
+"While it's possible to code Scala with just an editor and sbt, most "
+"programmers today use an Integrated Development Environment, or IDE for "
+"short. Two of the popular IDEs in Scala are [Metals](https://scalameta.org/"
+"metals/) and [IntelliJ IDEA](https://www.jetbrains.com/idea/), and they both "
+"integrate with sbt builds."
+msgstr ""
+
+#: src/reference/guide/IDE.md:14
+msgid "A few of the advantages of using the IDEs are:"
+msgstr ""
+
+#: src/reference/guide/IDE.md:16
+msgid "Jump to definition"
+msgstr ""
+
+#: src/reference/guide/IDE.md:17
+msgid "Code completion based on static types"
+msgstr ""
+
+#: src/reference/guide/IDE.md:18
+msgid "Listing compilation errors, and jumping to the error positions"
+msgstr ""
+
+#: src/reference/guide/IDE.md:19
+msgid "Interactive debugging"
+msgstr ""
+
+#: src/reference/guide/IDE.md:21
+msgid ""
+"Here are a few recipes on how to configure the IDEs to integrate with sbt:"
+msgstr ""
+
+#: src/reference/guide/IDE.md:23
+msgid ""
+"[Use sbt as Metals build server](../recipes/use-sbt-as-metals-build-server."
+"md)"
+msgstr ""
+
+#: src/reference/guide/IDE.md:24
+msgid "[Import to IntelliJ IDEA](../recipes/import-to-intellij.md)"
+msgstr ""
+
+#: src/reference/guide/IDE.md:25
+msgid "[Use Neovim](../recipes/use-neovim.md)"
+msgstr ""

@@ -26,7 +26,10 @@ object MdBookSitePlugin extends AutoPlugin {
         config / mdbookBuild := {
           import scala.sys.process.*
           val dir = mdbookDirectory.value
-          Process(List("mdbook", "build"), cwd = dir).!
+          IO.createDirectory(dir / "book")
+          Process(List("mdbook", "build", "-d", "book/en"), cwd = dir).!
+          Process(List("script/build.sh", "ja"), cwd = dir).!
+          Process(List("script/build.sh", "zh-cn"), cwd = dir).!
           val out = dir / "book"
           out
         },

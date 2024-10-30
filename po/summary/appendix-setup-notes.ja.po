@@ -1,0 +1,174 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:08:34-04:00\n"
+"PO-Revision-Date: 2024-10-30T01:14:09-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/appendix/setup-notes.md:1
+msgid "Setup Notes"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:4
+msgid ""
+"See [Installing sbt runner](Setup.md) for the instruction on general setup. "
+"Using Coursier or SDKMAN has two advantages."
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:6
+msgid ""
+"They will install the official packaging by Eclipse Adoptium etc, as opposed "
+"to the [\"mystery meat OpenJDK builds\"](https://mail.openjdk.java.net/"
+"pipermail/jdk8u-dev/2019-May/009330.html)."
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:7
+msgid ""
+"They will install `tgz` packaging of sbt that contains all JAR files. (DEB "
+"and RPM packages do not to save bandwidth)"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:9
+msgid ""
+"This page describes alternative ways of installing the sbt runner. Note that "
+"some of the third-party packages may not provide the latest version."
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:11
+msgid "OS specific setup"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:14
+msgid "macOS"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:16
+msgid "Homebrew"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:22
+msgid ""
+"```admonish warning\n"
+"Homebrew maintainers have added a dependency to JDK 13 because they want to "
+"use more brew dependencies ([brew#50649](https://github.com/Homebrew/"
+"homebrew-core/issues/50649)). This causes sbt to use JDK 13 even when `java` "
+"available on PATH is JDK 8 or 11. To prevent `sbt` from running on JDK 13, "
+"install [jEnv](https://www.jenv.be/) or switch to using [SDKMAN](https://"
+"sdkman.io/).\n"
+"```"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:26
+msgid "Windows"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:28
+msgid "[sbt-.msi](https://github.com/sbt/sbt/releases/download/v/sbt-.msi)"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:30
+msgid "[Chocolatey](https://chocolatey.org/packages/sbt)"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:36
+msgid "[Scoop](https://scoop.sh/)"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:42
+msgid "Linux"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:44
+msgid "Ubuntu and other Debian-based distributions"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:46
+msgid ""
+"[DEB]($sbt_deb_package_base$sbt-$app_version$.deb) package is officially "
+"supported by sbt, but it does not contain JAR files to save bandwidth."
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:48
+msgid ""
+"Ubuntu and other Debian-based distributions use the DEB format, but usually "
+"you don't install your software from a local DEB file. Instead they come "
+"with package managers both for the command line (e.g. `apt-get`, `aptitude`) "
+"or with a graphical user interface (e.g. Synaptic). Run the following from "
+"the terminal to install `sbt` (You'll need superuser privileges to do so, "
+"hence the `sudo`)."
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:54
+msgid "\"deb https://repo.scala-sbt.org/scalasbt/debian all main\""
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:55
+msgid "\"deb https://repo.scala-sbt.org/scalasbt/debian /\""
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:56
+msgid ""
+"\"https://keyserver.ubuntu.com/pks/lookup?"
+"op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823\""
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:62
+msgid ""
+"Package managers will check a number of configured repositories for packages "
+"to offer for installation. You just have to add the repository to the places "
+"your package manager will check."
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:64
+msgid ""
+"Once `sbt` is installed, you'll be able to manage the package in `aptitude` "
+"or Synaptic after you updated their package cache. You should also be able "
+"to see the added repository at the bottom of the list in System Settings -> "
+"Software & Updates -> Other Software:"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:66
+msgid ""
+"![Ubuntu Software & Updates Screenshot](/files/ubuntu-sources.png \"Ubuntu "
+"Software & Updates Screenshot\")"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:68
+msgid ""
+"`sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv "
+"2EE0EA64E40A89B84B2DF73499E82A75642AC823` may not work on Ubuntu Bionic LTS "
+"(18.04) since it's using a buggy GnuPG, so we are advising to use web API to "
+"download the public key in the above."
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:70
+msgid "Red Hat Enterprise Linux and other RPM-based distributions"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:72
+msgid ""
+"[RPM]($sbt_rpm_package_base$sbt-$app_version$.rpm) package is officially "
+"supported by sbt, but it does not contain JAR files to save bandwidth."
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:74
+msgid ""
+"Red Hat Enterprise Linux and other RPM-based distributions use the RPM "
+"format. Run the following from the terminal to install `sbt` (You'll need "
+"superuser privileges to do so, hence the `sudo`)."
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:78
+#: src/reference/appendix/setup-notes.md:88
+msgid "# remove old Bintray repo file\n"
+msgstr ""
+
+#: src/reference/appendix/setup-notes.md:85
+msgid "On Fedora (31 and above), use `sbt-rpm.repo`:"
+msgstr ""

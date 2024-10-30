@@ -1,0 +1,494 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:08:34-04:00\n"
+"PO-Revision-Date: 2024-10-30T01:14:09-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/reference/sbt-update.md:14
+msgid "sbt update"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:17
+msgid ""
+"See [library depdency basics](../guide/library-dependency-basics.md) in the "
+"Getting Started guide to learn about the basics."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:19
+msgid "Synopsis"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:22
+msgid "`sbt --client update`"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:24
+msgid "Description"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:27
+msgid ""
+"sbt uses [Coursier](https://get-coursier.io/) to implement library "
+"management, also known as a package manager in other ecosystems. The general "
+"idea of library management is that you can specify external libraries you "
+"would like to use in your subprojects, and the library management system "
+"would:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:31
+msgid "Check if such versions exists in the listed repositories"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:32
+msgid ""
+"Look for the transitive dependencies (i.e. the libraries used by the "
+"libraries)"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:33
+msgid "Attempt to resolve version conflicts, if any"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:34
+msgid "Download the artifacts, such as JAR files, from the repositories"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:36
+msgid "Dependencies"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:38
+msgid "Declaring a dependency looks like:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:44
+msgid "or"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:55
+msgid "Also, several dependencies can be declared together:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:64
+msgid ""
+"If you are using a dependency that was built with sbt, double the first `%` "
+"to be `%%`:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:71
+msgid ""
+"This will use the right JAR for the dependency built with the version of "
+"Scala that you are currently using. If you get an error while resolving this "
+"kind of dependency, that dependency probably wasn't published for the "
+"version of Scala you are using. See [Cross building](../concepts/cross-"
+"building.md) for details."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:84
+msgid "`versionScheme` and eviction errors"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:86
+msgid ""
+"sbt allows library authors to declare the version semantics using the "
+"`versionScheme` setting:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:89
+msgid "// Semantic Versioning applied to 0.x, as well as 1.x, 2.x, etc"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:93
+msgid ""
+"When Coursier finds multiple versions of a library, for example Cats Effect "
+"2.x and Cats Effect 3.0.0-M4, it often resolves the conflict by removing the "
+"older version from the graph. This process is colloquially called eviction, "
+"like \"Cats Effect 2.2.0 was evicted.\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:97
+msgid ""
+"This would work if the new tenant is binary compatible with Cats Effect "
+"2.2.0. In this case, the library authors have declared that they are _not_ "
+"binary compatible, so the eviction was actually unsafe. An unsafe eviction "
+"would cause runtime issues such as `ClassNotFoundException`. Instead "
+"Coursier should've failed to resolve."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:104
+msgid "\"use\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:106
+msgid "\"org.http4s\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:106
+msgid "\"http4s-blaze-server\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:106
+msgid "\"0.21.11\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:107
+msgid "\"org.typelevel\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:107
+msgid "\"cats-effect\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:107
+msgid "\"3.0.0-M4\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:112
+msgid ""
+"sbt performs this secondary compatibility check after Coursier returns a "
+"candidate:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:129
+msgid "This mechanism is called the _eviction error_."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:131
+msgid "Opting out of the the eviction error"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:133
+msgid ""
+"If the library authors have declared the compatibility breakage, but if you "
+"want to ignore the strict check (often for `scala-xml`), you can write this "
+"in `project/plugins.sbt` and `build.sbt`:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:137
+msgid "\"org.scala-lang.modules\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:137
+msgid "\"scala-xml\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:140
+msgid "To ignore all eviction errors:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:146
+msgid "Resolvers"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:148
+msgid ""
+"sbt uses the standard Maven Central repository by default. Declare "
+"additional repositories with the form:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:154
+msgid "For example:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:158
+msgid "\"org.apache.derby\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:158
+msgid "\"derby\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:158
+msgid "\"10.4.1.3\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:159
+msgid "\"org.specs\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:159
+msgid "\"specs\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:159
+msgid "\"1.6.1\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:162
+#: src/reference/reference/sbt-update.md:189
+msgid "\"Sonatype OSS Snapshots\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:162
+#: src/reference/reference/sbt-update.md:189
+msgid "\"https://oss.sonatype.org/content/repositories/snapshots\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:165
+msgid ""
+"sbt can search your local Maven repository if you add it as a repository:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:176
+msgid "Override default resolvers"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:178
+msgid ""
+"`resolvers` configures additional, inline user resolvers. By default, `sbt` "
+"combines these resolvers with default repositories (Maven Central and the "
+"local Ivy repository) to form `externalResolvers`. To have more control over "
+"repositories, set `externalResolvers` directly. To only specify repositories "
+"in addition to the usual defaults, configure `resolvers`."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:185
+msgid ""
+"For example, to use the Sonatype OSS Snapshots repository in addition to the "
+"default repositories,"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:192
+msgid "To use the local repository, but not the Maven Central repository:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:198
+msgid "Override all resolvers for all builds"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:200
+msgid ""
+"The repositories used to retrieve sbt, Scala, plugins, and application "
+"dependencies can be configured globally and declared to override the "
+"resolvers configured in a build or plugin definition. There are two parts:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:205
+msgid "Define the repositories used by the launcher."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:206
+msgid ""
+"Specify that these repositories should override those in build definitions."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:209
+msgid ""
+"The repositories used by the launcher can be overridden by defining `~/.sbt/"
+"repositories`, which must contain a `[repositories]` section with the same "
+"format as the `Launcher` configuration file. For example:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:213
+msgid ""
+"```\n"
+"[repositories]\n"
+"local\n"
+"my-maven-repo: https://example.org/repo\n"
+"my-ivy-repo: https://example.org/ivy-repo/, [organization]/[module]/"
+"[revision]/[type]s/[artifact](-[classifier]).[ext]\n"
+"```"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:220
+msgid ""
+"A different location for the repositories file may be specified by the `sbt."
+"repository.config` system property in the sbt startup script. The final step "
+"is to set `sbt.override.build.repos` to true to use these repositories for "
+"dependency resolution and retrieval."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:225
+msgid "Exclude Transitive Dependencies"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:227
+msgid ""
+"In certain cases a transitive dependency should be excluded from all "
+"dependencies. This can be achieved by setting up `ExclusionRules` in "
+"`excludeDependencies`."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:233
+msgid "// commons-logging is replaced by jcl-over-slf4j"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:234
+msgid "\"commons-logging\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:238
+msgid ""
+"To exclude certain transitive dependencies of a dependency, use the "
+"`excludeAll` or `exclude` methods. The `exclude` method should be used when "
+"a pom will be published for the project. It requires the organization and "
+"module name to exclude. For example,"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:245
+msgid "\"log4j\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:245
+msgid "\"1.2.15\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:245
+msgid "\"javax.jms\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:245
+msgid "\"jms\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:265
+msgid "Explicit URL"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:267
+msgid ""
+"If your project requires a dependency that is not present in a repository, a "
+"direct URL to its jar can be specified as follows:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:271
+msgid "\"slinky\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:271
+msgid "\"2.1\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:271
+msgid "\"https://slinky2.googlecode.com/svn/artifacts/2.1/slinky.jar\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:274
+msgid ""
+"The URL is only used as a fallback if the dependency cannot be found through "
+"the configured repositories. Also, the explicit URL is not included in "
+"published metadata (that is, the pom or ivy.xml)."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:278
+msgid "Disable Transitivity"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:280
+msgid ""
+"By default, these declarations fetch all project dependencies, transitively. "
+"In some instances, you may find that the dependencies listed for a project "
+"aren't necessary for it to build. Projects using the Felix OSGI framework, "
+"for instance, only explicitly require its main jar to compile and run. Avoid "
+"fetching artifact dependencies with either `intransitive()` or "
+"`notTransitive()`, as in this example:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:288
+#: src/reference/reference/sbt-update.md:330
+msgid "\"org.apache.felix\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:288
+#: src/reference/reference/sbt-update.md:330
+msgid "\"org.apache.felix.framework\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:288
+#: src/reference/reference/sbt-update.md:330
+msgid "\"1.8.0\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:291
+msgid "Classifiers"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:293
+msgid ""
+"You can specify the classifier for a dependency using the `classifier` "
+"method. For example, to get the jdk15 version of TestNG:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:297
+msgid "\"org.testng\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:297
+msgid "\"testng\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:297
+msgid "\"5.7\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:297
+msgid "\"jdk15\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:300
+msgid "For multiple classifiers, use multiple `classifier` calls:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:304
+msgid "\"org.lwjgl.lwjgl\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:304
+msgid "\"lwjgl-platform\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:304
+msgid "\"natives-windows\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:304
+msgid "\"natives-linux\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:304
+msgid "\"natives-osx\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:307
+msgid ""
+"To obtain particular classifiers for all dependencies transitively, run the "
+"`updateClassifiers` task. By default, this resolves all artifacts with the "
+"`sources` or `javadoc` classifier. Select the classifiers to obtain by "
+"configuring the `transitiveClassifiers` setting. For example, to only "
+"retrieve sources:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:314
+msgid "\"sources\""
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:317
+msgid "Download Sources"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:319
+msgid ""
+"Downloading source and API documentation jars is usually handled by an IDE "
+"plugin. These plugins use the `updateClassifiers` and `updateSbtClassifiers` "
+"tasks, which produce an `Update-Report` referencing these jars."
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:324
+msgid ""
+"To have sbt download the dependency's sources without using an IDE plugin, "
+"add `withSources()` to the dependency definition. For API jars, add "
+"`withJavadoc()`. For example:"
+msgstr ""
+
+#: src/reference/reference/sbt-update.md:333
+msgid ""
+"Note that this is not transitive. Use the `update*Classifiers` tasks for "
+"that."
+msgstr ""
