@@ -1,0 +1,204 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:50:36-04:00\n"
+"PO-Revision-Date: 2024-10-30T03:50:36-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-cn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/recipes/import-to-intellij.md:1
+msgid "Import to IntelliJ IDEA"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:14
+msgid "Objective"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:17
+msgid "I want to import sbt build to IntelliJ IDEA."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:19
+msgid "Steps"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:22
+msgid ""
+"[IntelliJ IDEA](https://www.jetbrains.com/idea/) is an IDE created by "
+"JetBrains, and the Community Edition is open source under Apache v2 license. "
+"IntelliJ integrates with many build tools, including sbt, to import the "
+"project."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:24
+msgid "To import a build to IntelliJ IDEA:"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:26
+msgid ""
+"Install Scala plugin on the Plugins tab:<br> ![IntelliJ](../files/intellij1."
+"png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:28
+msgid ""
+"From Projects, open a directory containing a `build.sbt` file.<br> !"
+"[IntelliJ](../files/intellij2.png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:30
+msgid ""
+"Once the import process is complete, open a Scala file to see that code "
+"completion works."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:32
+msgid ""
+"IntelliJ Scala plugin uses its own lightweight compilation engine to detect "
+"errors, which is fast but sometimes incorrect. Per [compiler-based "
+"highlighting](https://blog.jetbrains.com/scala/2021/07/27/intellij-scala-"
+"plugin-2021-2/#Compiler-based_highlighting), IntelliJ can be configured to "
+"use the Scala compiler for error highlighting."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:34
+msgid "Interactive debugging with IntelliJ IDEA"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:36
+msgid ""
+"IntelliJ supports interactive debugging by setting break points in the code:"
+"<br> ![IntelliJ](../files/intellij4.png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:38
+msgid ""
+"Interactive debugging can be started by right-clicking on an unit test, and "
+"selecting \"Debug '\\<test name\\>'.\" Alternatively, you can click the "
+"green \"run\" icon on the left part of the editor near the unit test. When "
+"the test hits a break point, you can inspect the values of the variables:"
+"<br> ![IntelliJ](../files/intellij5.png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:42
+msgid ""
+"See [Debug Code](https://www.jetbrains.com/help/idea/debugging-code.html) "
+"page on IntelliJ documentation for more details on how to navigate an "
+"interactive debugging session."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:44
+msgid "Alternative"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:47
+msgid "Using sbt as IntelliJ IDEA build server (advanced)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:49
+msgid ""
+"Importing the build to IntelliJ means that you're effectively using IntelliJ "
+"as the build tool and the compiler while you code (see also [compiler-based "
+"highlighting](https://blog.jetbrains.com/scala/2021/07/27/intellij-scala-"
+"plugin-2021-2/#Compiler-based_highlighting)). While many users are happy "
+"with the experience, depending on the code base some of the compilation "
+"errors may be false, it may not work well with plugins that generate "
+"sources, and generally you might want to code with the identical build "
+"semantics as sbt. Thankfully, modern IntelliJ supports alternative _build "
+"servers_ including sbt via the [Build Server Protocol](https://build-server-"
+"protocol.github.io/) (BSP)."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:53
+msgid ""
+"The benefit of using BSP with IntelliJ is that you're using sbt to do the "
+"actual build work, so if you are the kind of programmer who had sbt session "
+"up on the side, this avoids double compilation."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:88
+msgid "To use sbt as build server on IntelliJ:"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:90
+msgid "Install Scala plugin on the Plugins tab."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:91
+msgid ""
+"To use the BSP approach, do not use Open button on the Project tab:<br> !"
+"[IntelliJ](../files/intellij7.png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:93
+msgid ""
+"From menubar, click New > \"Project From Existing Sources\", or Find Action "
+"(`Cmd-Shift-P` on macOS) and type \"Existing\" to find \"Import Project From "
+"Existing Sources\":<br> ![IntelliJ](../files/intellij8.png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:96
+msgid ""
+"Open a `build.sbt` file. Select **BSP** when prompted:<br> ![IntelliJ](../"
+"files/intellij9.png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:98
+msgid ""
+"Select **sbt (recommended)** as the tool to import the BSP workspace:<br> !"
+"[IntelliJ](../files/intellij10.png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:100
+msgid ""
+"Once the import process is complete, open a Scala file to see that code "
+"completion works:<br> ![IntelliJ](../files/intellij11.png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:103
+msgid "Use the following setting to opt-out some of the subprojects from BSP."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:109
+msgid ""
+"Open Preferences, search BSP and check \"build automatically on file save\", "
+"and uncheck \"export sbt projects to Bloop before import\":<br> ![IntelliJ]"
+"(../files/intellij12.png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:112
+msgid ""
+"When you make changes to the code and save them (`Cmd-S` on macOS), IntelliJ "
+"will invoke sbt to do the actual building work."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:115
+msgid ""
+"See also Igal Tabachnik's [Using BSP effectively in IntelliJ and Scala]"
+"(https://hmemcpy.com/2021/09/bsp-and-intellij/) for more details."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:117
+msgid "Logging into sbt session"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:119
+msgid "We can also log into the existing sbt session using the thin client."
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:121
+msgid ""
+"From Terminal section, type in `sbt --client` ![IntelliJ](../files/intellij6."
+"png)"
+msgstr ""
+
+#: src/reference/recipes/import-to-intellij.md:124
+msgid ""
+"This lets you log into the sbt session IntelliJ has started. In there you "
+"can call `testOnly` and other tasks with the code already compiled."
+msgstr ""

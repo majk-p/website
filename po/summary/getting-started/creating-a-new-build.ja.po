@@ -1,0 +1,115 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:08:34-04:00\n"
+"PO-Revision-Date: 2024-10-30T01:14:09-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/guide/sbt-new.md:1
+msgid "Creating a new build"
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:4
+msgid "To start a new build with `sbt`, use `sbt new`."
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:29
+msgid "If you select \"a\", you will be prompted by more questions:"
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:37
+msgid "Hit return key to select the default values."
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:39
+msgid ""
+"```\n"
+"[info] Updated file /private/tmp/bar/project/build.properties: set sbt."
+"version to 1.9.8\n"
+"[info] welcome to sbt 1.9.8 (Azul Systems, Inc. Java 1.8.0_352)\n"
+"....\n"
+"[info] set current project to bar (in build file:/private/tmp/foo/)\n"
+"[info] sbt server started at local:///Users/eed3si9n/.sbt/1.0/server/"
+"d0ac1409c0117a949d47/sock\n"
+"[info] started sbt server\n"
+"sbt:bar> exit\n"
+"[info] shutting down sbt server\n"
+"```"
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:50
+msgid "Here are the files that are created by this template:"
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:69
+msgid "Let's take a look at the `build.sbt` file:"
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:72
+msgid "\"0.2.0\""
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:73 src/reference/guide/sbt-new.md:74
+msgid "\"org.scala-lang\""
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:73
+msgid "\"toolkit\""
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:74
+msgid "\"toolkit-test\""
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:76
+msgid "\"3.3.0\""
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:81
+msgid ""
+"This is called a **build definition**, and it contains the information sbt "
+"needs to compile your project. This is written in `.sbt` format, a subset of "
+"Scala language."
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:83
+msgid "Here's what's in `src/main/scala/example/Main.scala`:"
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:89
+msgid "s\"Hello ${"
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:89
+msgid "}\""
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:92
+msgid ""
+"This is a Hello world template. We can run it from the sbt shell by starting "
+"`sbt --client` and typing `run <your_name>` inside the shell:"
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:107
+msgid "Giter8 templates"
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:109
+msgid ""
+"In addition to a few `.local` templates, `sbt new` integrates with [Giter8]"
+"(https://www.foundweekends.org/giter8/), and open templating system that "
+"uses GitHub to host templates. For example, `scala/scala3.g8` is maintained "
+"by the Scala team to create a new Scala 3 build:"
+msgstr ""
+
+#: src/reference/guide/sbt-new.md:117
+msgid ""
+"[Giter8 wiki](https://github.com/foundweekends/giter8/wiki/giter8-templates) "
+"lists over 100 templates that can jump start your new build."
+msgstr ""

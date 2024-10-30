@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:08:34-04:00\n"
+"PO-Revision-Date: 2024-10-30T01:14:09-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/recipes/use-neovim.md:1
+msgid "Use Neovim"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:13
+msgid "Objective"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:16
+msgid "I want to use Metals on Neovim with sbt as the build server."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:18
+msgid "Steps"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:21
+msgid ""
+"Chris Kipp, who is a maintainer of Metals, created [nvim-metals](https://"
+"github.com/scalameta/nvim-metals) plugin that provides comprehensive Metals "
+"support on Neovim. To install nvim-metals, create `lsp.lua` under "
+"`$XDG_CONFIG_HOME/nvim/lua/` based on Chris's [lsp.lua](https://github.com/"
+"scalameta/nvim-metals/discussions/39#discussion-82302) and adjust to your "
+"preference. For example, comment out its plugins section and load the listed "
+"plugins using the plugin manager of your choice such as vim-plug."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:23
+msgid "In `init.vim`, the file can be loaded as:"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:27
+msgid "'lsp'"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:31
+msgid ""
+"Per `lsp.lua`, `g:metals_status` should be displayed on the status line, "
+"which can be done using lualine.nvim etc."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:33
+msgid "Next, open a Scala file in an sbt build using Neovim."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:34
+msgid "Run `:MetalsInstall` when prompted."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:35
+msgid "Run `:MetalsStartServer`."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:36
+msgid ""
+"If the status line is set up, you should see something like \"Connecting to "
+"sbt\" or \"Indexing.\"<br> <img src=\"../files/nvim0.png\" width=\"900\">"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:38
+msgid ""
+"Code completion works when you're in Insert mode, and you can tab through "
+"the candidates:<br> <img src=\"../files/nvim1.png\" width=\"900\">"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:41
+msgid ""
+"A build is triggered upon saving changes, and compilation errors are "
+"displayed inline:<br> <img src=\"../files/nvim2.png\" width=\"900\">"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:44
+msgid "Go to definition"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:46
+msgid ""
+"You can jump to definition of the symbol under cursor by using `gD` (exact "
+"keybinding can be customized):<br> <img src=\"../files/nvim3.png\" "
+"width=\"900\">"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:48
+msgid "Use `Ctrl-O` to return to the old buffer."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:50
+msgid "Hover"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:52
+msgid ""
+"To display the type information of the symbol under cursor, like hovering, "
+"use `K` in Normal mode:<br> <img src=\"../files/nvim4.png\" width=\"900\">"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:55
+msgid "Listing diagnostics"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:57
+msgid ""
+"To list all compilation errors and warnings, use `<leader>aa`:<br> <img "
+"src=\"../files/nvim5.png\" width=\"900\">"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:59
+msgid ""
+"Since this is in the standard quickfix list, you can use the command such as "
+"`:cnext` and `:cprev` to nagivate through the errors and warnings."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:60
+msgid "To list just the errors, use `<leader>ae`."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:62
+msgid "Interactive debugging with Neovim"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:64
+msgid ""
+"Thanks to nvim-dap, Neovim supports interactive debugging. Set break points "
+"in the code using `<leader>dt`:<br> <img src=\"../files/nvim6.png\" "
+"width=\"900\">"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:66
+msgid ""
+"Nagivate to a unit test, confirm that it's built by hovering (`K`), and then "
+"\"debug continue\" (`<leader>dc`) to start a debugger. Choose \"1: "
+"RunOrTest\" when prompted."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:69
+msgid ""
+"When the test hits a break point, you can inspect the values of the "
+"variables by debug hovering (`<leader>dK`):<br> <img src=\"../files/nvim7."
+"png\" width=\"900\">"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:71
+msgid "\"debug continue\" (`<leader>dc`) again to end the session."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:73
+msgid ""
+"See [nvim-metals](https://github.com/scalameta/nvim-metals) regarding "
+"further details."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:75
+msgid "Logging into sbt session"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:77
+msgid "We can also log into the existing sbt session using the thin client."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:79
+msgid "In a new vim window type `:terminal` to start the built-in terminal."
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:80
+msgid ""
+"Type in `sbt --client`<br> <img src=\"../files/nvim8.png\" width=\"900\">"
+msgstr ""
+
+#: src/reference/recipes/use-neovim.md:83
+msgid "Even though it's inside Neovim, tab completion etc works fine inside."
+msgstr ""

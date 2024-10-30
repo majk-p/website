@@ -13,6 +13,13 @@ metals.sbt
 
 .vscode
 
+# GetText
+*.pot
+*.po~
+*.mo
+po/ja.po
+po/zh-cn.po
+
 # Dependencies
 node_modules
 

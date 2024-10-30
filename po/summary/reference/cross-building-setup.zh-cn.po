@@ -1,0 +1,232 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:50:36-04:00\n"
+"PO-Revision-Date: 2024-10-30T03:50:36-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-cn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/reference/cross-building-setup.md:1
+msgid "Cross building setup"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:4
+msgid ""
+"This page covers cross building setup. See [Cross building](../concepts/"
+"cross-building.html) for general explanation."
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:6
+msgid "Using cross-built libraries"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:9
+msgid ""
+"To use a library built against multiple versions of Scala, double the first "
+"`%` in a ModuleID to be `%%`. This tells sbt that it should append the "
+"current version of Scala being used to build the library to the dependency’s "
+"name. For example:"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:12
+#: src/reference/reference/cross-building-setup.md:18
+msgid "\"org.typelevel\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:12
+msgid "\"cats-effect\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:12
+#: src/reference/reference/cross-building-setup.md:18
+msgid "\"3.5.4\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:15
+msgid ""
+"A nearly equivalent, manual alternative for a fixed version of Scala is:"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:18
+msgid "\"cats-effect_3\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:21
+msgid "Scala 3 specific cross-versions"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:23
+msgid ""
+"If you are developing an application in Scala 3, you can use Scala 2.13 "
+"libraries:"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:26
+#: src/reference/reference/cross-building-setup.md:34
+#: src/reference/reference/cross-building-setup.md:46
+#: src/reference/reference/cross-building-setup.md:47
+#: src/reference/reference/cross-building-setup.md:53
+#: src/reference/reference/cross-building-setup.md:54
+#: src/reference/reference/cross-building-setup.md:60
+#: src/reference/reference/cross-building-setup.md:66
+#: src/reference/reference/cross-building-setup.md:72
+#: src/reference/reference/cross-building-setup.md:78
+msgid "\"a\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:26
+#: src/reference/reference/cross-building-setup.md:34
+#: src/reference/reference/cross-building-setup.md:46
+#: src/reference/reference/cross-building-setup.md:47
+#: src/reference/reference/cross-building-setup.md:53
+#: src/reference/reference/cross-building-setup.md:54
+#: src/reference/reference/cross-building-setup.md:60
+#: src/reference/reference/cross-building-setup.md:66
+#: src/reference/reference/cross-building-setup.md:72
+msgid "\"b\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:26
+#: src/reference/reference/cross-building-setup.md:34
+#: src/reference/reference/cross-building-setup.md:46
+#: src/reference/reference/cross-building-setup.md:47
+#: src/reference/reference/cross-building-setup.md:53
+#: src/reference/reference/cross-building-setup.md:54
+#: src/reference/reference/cross-building-setup.md:60
+#: src/reference/reference/cross-building-setup.md:66
+#: src/reference/reference/cross-building-setup.md:72
+#: src/reference/reference/cross-building-setup.md:78
+msgid "\"1.0\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:29
+msgid ""
+"This is equivalent to using `%%` except it resolves the `_2.13` variant of "
+"the library  when `scalaVersion` is 3.x.y."
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:31
+msgid ""
+"Conversely we have `CrossVersion.for2_13Use3` to use the `_3` variant of the "
+"library when `scalaVersion` is 2.13.x:"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:41
+msgid "More about using cross-built libraries"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:43
+msgid ""
+"You can have fine-grained control over the behavior for different Scala "
+"versions by using the `cross` method on `ModuleID` These are equivalent:"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:50
+msgid "These are equivalent:"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:57
+msgid ""
+"This overrides the defaults to always use the full Scala version instead of "
+"the binary Scala version:"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:63
+msgid ""
+"`CrossVersion.patch` sits between `CrossVersion.binary` and `CrossVersion."
+"full` in that it strips off any trailing `-bin-...` suffix which is used to "
+"distinguish variant but binary compatible Scala toolchain builds."
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:69
+msgid "`CrossVersion.constant` fixes a constant value:"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:72
+msgid "\"2.9.1\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:75
+msgid "It is equivalent to:"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:78
+msgid "\"b_2.9.1\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:81
+msgid "Project matrix"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:84
+msgid ""
+"sbt 2.x introduces project matrix, which enables cross building to happen in "
+"parallel."
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:87
+msgid "\"com.example\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:88
+#: src/reference/reference/cross-building-setup.md:95
+msgid "\"3.3.3\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:89
+msgid "\"0.1.0-SNAPSHOT\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:91
+#: src/reference/reference/cross-building-setup.md:93
+msgid "\"core\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:95
+msgid "\"2.13.15\""
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:98
+msgid "Publishing convention"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:101
+msgid ""
+"We use the Scala ABI (application binary interface) version as suffix to "
+"denote which version of Scala was used to compile a library. For example, "
+"the artifact name `cats-effect_2.13` means Scala 2.13.x was used. `cats-"
+"effect_3` means Scala 3.x was used. This fairly simple approach allows "
+"interoperability with users of Maven, Ant and other build tools. For pre-"
+"prelease versions of Scala, such as 2.13.0-RC1, full version will be "
+"considered the ABI version."
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:103
+msgid ""
+"`crossVersion` setting can be used to override the publishing convention:"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:105
+msgid "`CrossVersion.disabled` (no suffix)"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:106
+msgid "`CrossVersion.binary` (`_<scala-abi-version>`)"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:107
+msgid "`CrossVersion.full` (`_<scala-version>`)"
+msgstr ""
+
+#: src/reference/reference/cross-building-setup.md:109
+msgid ""
+"The default is either `CrossVersion.binary` or `CrossVersion.disabled` "
+"depending on the value of `crossPaths`. Because (unlike Scala library) Scala "
+"compiler is not forward compatible among the patch releases, compiler "
+"plugins should use `CrossVersion.full`."
+msgstr ""

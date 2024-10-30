@@ -31,6 +31,7 @@ jobs:
         cargo install mdbook --no-default-features --features search --vers "^0.4" --locked
         cargo install mdbook-variables --vers "^0.2" --locked
         cargo install mdbook-admonish --vers "^1" --locked
+        cargo install mdbook-i18n-helpers --locked
         export PATH="$PATH:$HOME/.cargo/bin"
         mdbook --version
 

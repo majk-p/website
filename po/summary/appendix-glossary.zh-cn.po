@@ -1,0 +1,135 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-30T03:50:36-04:00\n"
+"PO-Revision-Date: 2024-10-30T03:50:36-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-cn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/appendix/glossary.md:20
+msgid "Glossary"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:23
+msgid "Symbols"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:26
+msgid "`:=`, `+=`, `++=`"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:28
+msgid ""
+"These construct a [Setting](../../../../1.x/api/sbt/internal/util/"
+"Init$Setting.html), which is the fundamental type in the [settings](../guide/"
+"build-definition-basics.md) system."
+msgstr ""
+
+#: src/reference/appendix/glossary.md:30
+msgid "`%`"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:32
+msgid ""
+"This is used to build up a [ModuleID](../../../../1.x/api/sbt/"
+"librarymanagement/ModuleID.html)."
+msgstr ""
+
+#: src/reference/appendix/glossary.md:34
+msgid "`%%`"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:36
+msgid ""
+"This is similar to `%` except that it identifies a dependency that has been "
+"[cross built](../concepts/cross-building.html)."
+msgstr ""
+
+#: src/reference/appendix/glossary.md:38
+msgid "`%%%`"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:40
+msgid ""
+"This is defined in [sbt-platform-deps](https://github.com/portable-scala/sbt-"
+"platform-deps) in sbt 1.x."
+msgstr ""
+
+#: src/reference/appendix/glossary.md:42
+msgid "C"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:45
+msgid "Command"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:47
+msgid ""
+"A system-level building block of sbt, often used to capture user interaction "
+"or IDE interaction. See [Command](../concepts/command.html)."
+msgstr ""
+
+#: src/reference/appendix/glossary.md:49
+msgid "Cross building"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:51
+msgid ""
+"The idea of building multiple targets from the same set of source file. This "
+"includes Scala cross building, targetting multiple versions of Scala "
+"releases; platform cross building, targetting JVM, Scala.JS, and Scala "
+"Native; and custom virtual axis like Spark versions."
+msgstr ""
+
+#: src/reference/appendix/glossary.md:53
+msgid "D"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:56
+msgid "Dependency resolution"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:58
+msgid ""
+"During library management, when multiple version candidates (e.g. "
+"`foo:2.2.0` and `foo:3.0.0`) are found for a library `foo` within a "
+"dependency graph, it is called a _dependency conflict_. The process of "
+"mediating the conflict into a single version is called _dependency "
+"resolution_. Often, this would result in the older version beging removed "
+"from the dependency graph, which is called an _eviction_ of `foo:2.2.0`. In "
+"some cases, an eviction is considered unsafe because the candidates are not "
+"replacable. See [sbt update](../reference/sbt-update.md)."
+msgstr ""
+
+#: src/reference/appendix/glossary.md:60
+msgid "E"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:63
+msgid "Eviction"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:65
+msgid "See [dependency resolution](#dependency-resolution)."
+msgstr ""
+
+#: src/reference/appendix/glossary.md:67
+msgid "V"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:70
+msgid "`value`"
+msgstr ""
+
+#: src/reference/appendix/glossary.md:72
+msgid ""
+"`.value` is used to denote a happens-before relationship from one task or "
+"setting to another. This method is special (it is a macro) and cannot be "
+"used except in `:=` or in the standalone construction methods `Def.setting` "
+"and `Def.task`."
+msgstr ""

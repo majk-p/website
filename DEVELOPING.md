@@ -1,3 +1,35 @@
+Globalization
+-------------
+
+To add a new locale (es, zh-cn, etc):
+
+```bash
+script/genpo.sh xx
+```
+
+To resync the po files to the original:
+
+```bash
+script/sync.sh xx
+```
+
+To serve the po files, run the following:
+
+```bash
+script/serve.sh xx
+```
+
+then run:
+
+```bash
+script/concat.sh xx
+```
+
+when you change a `*.po` file
+
+Diataxis
+--------
+
 The following is the [four kinds of documentation](https://www.writethedocs.org/videos/eu/2017/the-four-kinds-of-documentation-and-why-you-need-to-understand-what-they-are-daniele-procida/) structure, which I'm not really sure would work, but worth giving it some try.
 
 ### tutorial

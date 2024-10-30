@@ -17,7 +17,7 @@ lazy val root = (project in file("."))
     name := "website",
     siteEmail := "eed3si9n" + "@gmail.com",
     // Reference
-    MdBook / siteSubdirName := s"""$targetSbtBinaryVersion/docs/en""",
+    MdBook / siteSubdirName := s"""$targetSbtBinaryVersion/docs/""",
     tutorialSubDirName := s"""$targetSbtBinaryVersion/tutorial""",
     landingSubDirName := "",
     // Redirects
