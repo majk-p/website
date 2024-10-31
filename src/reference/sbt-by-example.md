@@ -5,7 +5,7 @@
   [Essential-sbt]: https://www.scalawilliam.com/essential-sbt/
 
 sbt by example
---------------
+==============
 
 This page assumes you've [installed sbt runner][Setup].
 

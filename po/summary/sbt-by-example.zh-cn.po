@@ -1,0 +1,528 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-31T01:06:19-04:00\n"
+"PO-Revision-Date: 2024-10-31T01:06:19-04:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-cn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/sbt-by-example.md:7
+msgid "sbt by example"
+msgstr "sbt 示例教程"
+
+#: src/reference/sbt-by-example.md:10
+msgid "This page assumes you've [installed sbt runner](Setup.md)."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:12
+msgid "Let's start with examples rather than explaining how sbt works or why."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:14
+msgid "Create a minimum sbt build"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:21
+msgid "\"sbt.version=2.0.0-M2\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:24
+msgid "Start sbt shell"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:34
+msgid "Exit sbt shell"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:36
+msgid ""
+"To leave sbt shell, type `exit` or use Ctrl+D (Unix) or Ctrl+Z (Windows)."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:42
+msgid "Compile a project"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:44
+msgid ""
+"As a convention, we will use the `sbt:...>` or `>` prompt to mean that we're "
+"in the sbt interactive shell."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:52
+msgid "Recompile on code change"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:54
+msgid ""
+"Prefixing the `compile` command (or any other command) with `~` causes the "
+"command to be automatically re-executed whenever one of the source files "
+"within the project is modified. For example:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:64
+msgid "Create a source file"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:66
+msgid ""
+"Leave the previous command running. From a different shell or in your file "
+"manager create in the foo-build directory the following nested directories: "
+"`src/main/scala/example`. Then, create `Hello.scala` in the `example` "
+"directory using your favorite editor as follows:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:74
+msgid "s\"Hello ${"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:74
+msgid "}\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:77
+msgid "This new file should be picked up by the running command:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:87
+msgid "Press `Enter` to exit `~compile`."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:89
+msgid "Run a previous command"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:91
+msgid ""
+"From sbt shell, press up-arrow twice to find the `compile` command that you "
+"executed at the beginning."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:98
+msgid "Getting help"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:100
+msgid "Use the `help` command to get basic help about the available commands."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:117
+msgid "Display the description of a specific task:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:124
+msgid "Run your app"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:133
+msgid "Set ThisBuild / scalaVersion from sbt shell"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:135
+msgid ""
+"```\n"
+"sbt:foo-build> set scalaVersion := \"3.3.3\"\n"
+"[info] Defining scalaVersion\n"
+"[info] The new value will be used by Compile / bspBuildTarget, Compile / "
+"dependencyTreeCrossProjectId and 51 others.\n"
+"[info]  Run `last` for details.\n"
+"[info] Reapplying settings...\n"
+"[info] set current project to foo (in build file:/tmp/foo-build/)\n"
+"```"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:144 src/reference/sbt-by-example.md:598
+msgid "Check the `scalaVersion` setting:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:151
+msgid "Save the session to build.sbt"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:153
+msgid "We can save the ad-hoc settings using `session save`."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:167
+msgid "`build.sbt` file should now contain:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:170 src/reference/sbt-by-example.md:179
+#: src/reference/sbt-by-example.md:205 src/reference/sbt-by-example.md:282
+#: src/reference/sbt-by-example.md:351 src/reference/sbt-by-example.md:393
+#: src/reference/sbt-by-example.md:421 src/reference/sbt-by-example.md:458
+msgid "\"3.3.3\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:174
+msgid "Name your project"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:176 src/reference/sbt-by-example.md:202
+#: src/reference/sbt-by-example.md:279
+msgid "Using an editor, change `build.sbt` as follows:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:180 src/reference/sbt-by-example.md:206
+#: src/reference/sbt-by-example.md:283 src/reference/sbt-by-example.md:352
+#: src/reference/sbt-by-example.md:394 src/reference/sbt-by-example.md:422
+#: src/reference/sbt-by-example.md:459
+msgid "\"com.example\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:181 src/reference/sbt-by-example.md:207
+#: src/reference/sbt-by-example.md:270 src/reference/sbt-by-example.md:284
+#: src/reference/sbt-by-example.md:357 src/reference/sbt-by-example.md:401
+#: src/reference/sbt-by-example.md:430 src/reference/sbt-by-example.md:468
+msgid "\"Hello\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:184
+msgid "Reload the build"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:186
+msgid ""
+"Use the `reload` command to reload the build. The command causes the `build."
+"sbt` file to be re-read, and its settings applied."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:198
+msgid "Note that the prompt has now changed to `sbt:Hello>`."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:200
+msgid "Add toolkit-test to libraryDependencies"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:208 src/reference/sbt-by-example.md:286
+#: src/reference/sbt-by-example.md:287 src/reference/sbt-by-example.md:359
+#: src/reference/sbt-by-example.md:360 src/reference/sbt-by-example.md:396
+#: src/reference/sbt-by-example.md:403 src/reference/sbt-by-example.md:424
+#: src/reference/sbt-by-example.md:432 src/reference/sbt-by-example.md:461
+#: src/reference/sbt-by-example.md:476
+msgid "\"org.scala-lang\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:208 src/reference/sbt-by-example.md:287
+#: src/reference/sbt-by-example.md:360 src/reference/sbt-by-example.md:396
+#: src/reference/sbt-by-example.md:424 src/reference/sbt-by-example.md:461
+msgid "\"toolkit-test\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:208 src/reference/sbt-by-example.md:286
+#: src/reference/sbt-by-example.md:287 src/reference/sbt-by-example.md:359
+#: src/reference/sbt-by-example.md:360 src/reference/sbt-by-example.md:396
+#: src/reference/sbt-by-example.md:403 src/reference/sbt-by-example.md:424
+#: src/reference/sbt-by-example.md:432 src/reference/sbt-by-example.md:461
+#: src/reference/sbt-by-example.md:476
+msgid "\"0.1.7\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:211 src/reference/sbt-by-example.md:291
+#: src/reference/sbt-by-example.md:371
+msgid "Use the `reload` command to reflect the change in `build.sbt`."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:217
+msgid "Run incremental tests"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:223
+msgid "Run incremental tests continuously"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:229
+msgid "Write a test"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:231
+msgid ""
+"Leaving the previous command running, create a file named `src/test/scala/"
+"example/HelloSuite.scala` using an editor:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:238 src/reference/sbt-by-example.md:269
+msgid "\"Hello should start with H\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:239
+msgid "\"hello\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:239 src/reference/sbt-by-example.md:270
+msgid "\"H\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:244
+msgid "`~test` should pick up the change:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:246
+msgid ""
+"```\n"
+"example.HelloSuite:\n"
+"==> X example.HelloSuite.Hello should start with H  0.012s munit."
+"FailException: /tmp/foo-build/src/test/scala/example/HelloSuite.scala:5 "
+"assertion failed\n"
+"4:  test(\"Hello should start with H\") {\n"
+"5:    assert(\"hello\".startsWith(\"H\"))\n"
+"6:  }\n"
+"    at munit.FunSuite.assert(FunSuite.scala:11)\n"
+"    at example.HelloSuite.$init$$$anonfun$1(HelloSuite.scala:5)\n"
+"[error] Failed: Total 1, Failed 1, Errors 0, Passed 0\n"
+"[error] Failed tests:\n"
+"[error]   example.HelloSuite\n"
+"[error] (Test / testQuick) sbt.TestsFailedException: Tests unsuccessful\n"
+"[error] elapsed time: 1 s, cache 50%, 3 disk cache hits, 3 onsite tasks\n"
+"```"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:261
+msgid "Make the test pass"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:263
+msgid "Using an editor, change `src/test/scala/example/HelloSuite.scala` to:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:275
+msgid ""
+"Confirm that the test passes, then press `Enter` to exit the continuous test."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:277
+msgid "Add a library dependency"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:286 src/reference/sbt-by-example.md:359
+#: src/reference/sbt-by-example.md:403 src/reference/sbt-by-example.md:432
+#: src/reference/sbt-by-example.md:476
+msgid "\"toolkit\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:293
+msgid "Use Scala REPL"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:295
+msgid "We can find out the current weather in New York."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:310
+msgid ""
+"uri\"https://api.open-meteo.com/v1/forecast?latitude=\\"
+"$newYorkLatitude&longitude=\\$newYorkLongitude&current_weather=true\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:315
+msgid "// press Ctrl+D"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:317
+msgid "// Exiting paste mode, now interpreting."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:321 src/reference/sbt-by-example.md:341
+msgid "\"latitude\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:322 src/reference/sbt-by-example.md:341
+msgid "\"longitude\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:323 src/reference/sbt-by-example.md:341
+msgid "\"generationtime_ms\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:324 src/reference/sbt-by-example.md:341
+msgid "\"utc_offset_seconds\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:325 src/reference/sbt-by-example.md:341
+msgid "\"timezone\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:325 src/reference/sbt-by-example.md:326
+#: src/reference/sbt-by-example.md:341
+msgid "\"GMT\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:326 src/reference/sbt-by-example.md:341
+msgid "\"timezone_abbreviation\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:327 src/reference/sbt-by-example.md:341
+msgid "\"elevation\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:328 src/reference/sbt-by-example.md:341
+#: src/reference/sbt-by-example.md:501
+msgid "\"current_weather\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:343
+msgid "// to quit"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:346
+msgid "Make a subproject"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:348 src/reference/sbt-by-example.md:390
+msgid "Change `build.sbt` as follows:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:355 src/reference/sbt-by-example.md:399
+#: src/reference/sbt-by-example.md:427 src/reference/sbt-by-example.md:464
+msgid "\".\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:365 src/reference/sbt-by-example.md:409
+#: src/reference/sbt-by-example.md:438 src/reference/sbt-by-example.md:473
+msgid "\"core\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:367 src/reference/sbt-by-example.md:411
+#: src/reference/sbt-by-example.md:440 src/reference/sbt-by-example.md:475
+msgid "\"Hello Core\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:373
+msgid "List all subprojects"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:382
+msgid "Compile the subproject"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:388
+msgid "Add toolkit-test to the subproject"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:416
+msgid "Broadcast commands"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:418
+msgid ""
+"Set aggregate so that the command sent to `hello` is broadcast to "
+"`helloCore` too:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:445
+msgid "After `reload`, `~test` now runs on both subprojects:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:451
+msgid "Press `Enter` to exit the continuous test."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:453
+msgid "Make hello depend on helloCore"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:455
+msgid ""
+"Use `.dependsOn(...)` to add a dependency on other subprojects. Also let's "
+"move the toolkit dependency to `helloCore`."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:481
+msgid "Parse JSON using uJson"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:483
+msgid "Let's use uJson from the toolkit in `helloCore`."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:485
+msgid "Add `core/src/main/scala/example/core/Weather.scala`:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:497
+msgid ""
+"uri\"https://api.open-meteo.com/v1/forecast?"
+"latitude=40.7143&longitude=-74.006&current_weather=true\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:501
+msgid "\"temperature\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:505
+msgid "Next, change `src/main/scala/example/Hello.scala` as follows:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:514
+msgid "s\"Hello! The current temperature in New York is $temp C.\""
+msgstr ""
+
+#: src/reference/sbt-by-example.md:517
+msgid "Let's run the app to see if it worked:"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:589
+msgid "Switch scalaVersion temporarily"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:608
+msgid "This setting will go away after `reload`."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:632
+msgid "Batch mode"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:634
+msgid ""
+"You can also run sbt in batch mode, passing sbt commands directly from the "
+"terminal."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:636
+msgid ""
+"```\n"
+"$ sbt clean \"testOnly HelloSuite\"\n"
+"```"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:640
+msgid ""
+"**Note**: Running in batch mode requires JVM spinup and JIT each time, so "
+"**your build will run much slower**. For day-to-day coding, we recommend "
+"using the sbt shell or a continuous test like `~test`."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:645
+msgid "sbt new command"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:647
+msgid ""
+"You can use the sbt `new` command to quickly setup a simple \"Hello world\" "
+"build."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:659
+msgid "When prompted for the project name, type `hello`."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:661
+msgid "This will create a new project under a directory named `hello`."
+msgstr ""
+
+#: src/reference/sbt-by-example.md:663
+msgid "Credits"
+msgstr ""
+
+#: src/reference/sbt-by-example.md:665
+msgid ""
+"This page is based on the [Essential sbt](https://www.scalawilliam.com/"
+"essential-sbt/) tutorial written by William \"Scala William\" Narmontas."
+msgstr ""

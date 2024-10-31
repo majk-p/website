@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-31T01:06:19-04:00\n"
+"PO-Revision-Date: 2024-10-31 03:13-0400\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.5\n"
+
+#: src/reference/Setup.md:1
+msgid "Installing sbt runner"
+msgstr "安装 sbt runner"
+
+#: src/reference/Setup.md:4
+msgid "To build an sbt project, you'll need to take these steps:"
+msgstr "要构建 sbt 工程，你需要经过以下几步："
+
+#: src/reference/Setup.md:6
+msgid ""
+"Install JDK (We recommend Eclipse Adoptium Temurin JDK 8, 11, or 17, or Zulu "
+"JDK 8 for macOS with ARM chips)."
+msgstr ""
+"安装 JDK（建议使用 Eclipse Adoptium 的 Temurin JDK 8、11 或 17，或者适用于 "
+"ARM 芯片的 macOS 的 Zulu JDK 8）。"
+
+#: src/reference/Setup.md:7
+msgid "Install sbt runner."
+msgstr "安装 sbt runner。"
+
+#: src/reference/Setup.md:9
+msgid ""
+"sbt runner is a script that invokes a declared version of sbt, downloading "
+"it beforehand if necessary. This allows build authors to precisely control "
+"the sbt version, instead of relying on users' machine environment."
+msgstr ""
+"sbt runner 是一个 shell 脚本，它会在必要时提前下载指定版本的 sbt 并调用它。通"
+"过这种机制，构建作者可以精确控制 sbt 的版本，而不是依赖用户的机器环境。"
+
+#: src/reference/Setup.md:12
+msgid "Prerequisites"
+msgstr "软件需求"
+
+#: src/reference/Setup.md:14
+msgid ""
+"sbt runs on all major operating systems; however, it requires JDK 8 or "
+"higher to run."
+msgstr "sbt 可在所有主流操作系统上运行；但是，运行它需要 JDK 8 或更高版本。"
+
+#: src/reference/Setup.md:17
+msgid "# openjdk version \"1.8.0_352\"\n"
+msgstr ""
+
+#: src/reference/Setup.md:21
+msgid "Installing from SDKMAN"
+msgstr "通过 SDKMAN 安装"
+
+#: src/reference/Setup.md:23
+msgid ""
+"To install both JDK and sbt, consider using [SDKMAN](https://sdkman.io/)."
+msgstr "要同时安装 JDK 和 sbt，可以考虑使用 [SDKMAN](https://sdkman.io/)。"
+
+#: src/reference/Setup.md:26
+msgid "\"\\b8\\.[0-9]*\\.[0-9]*\\-tem\""
+msgstr ""
+
+#: src/reference/Setup.md:30
+msgid "Universal packages"
+msgstr "通用的包安装"
+
+#: src/reference/Setup.md:32
+msgid ""
+"[sbt-1.10.0.zip](https://github.com/sbt/sbt/releases/download/v1.10.0/"
+"sbt-1.10.0.zip)"
+msgstr ""
+
+#: src/reference/Setup.md:33
+msgid ""
+"[sbt-1.10.0.tgz](https://github.com/sbt/sbt/releases/download/v1.10.0/"
+"sbt-1.10.0.tgz)"
+msgstr ""
+
+#: src/reference/Setup.md:34
+msgid ""
+"[sbt-1.10.0.msi](https://github.com/sbt/sbt/releases/download/v1.10.0/"
+"sbt-1.10.0.msi)"
+msgstr ""
+
+#: src/reference/Setup.md:36
+msgid "Verify the sbt runner"
+msgstr "验证 sbt runner"
+
+#: src/reference/Setup.md:40
+msgid "# 1.10.0\n"
+msgstr ""

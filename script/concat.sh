@@ -25,10 +25,13 @@ while [[ $# -gt 0 ]]; do
 done
 
 output_file="po/$locale.po"
-head -n 13 po/summary/summary.$locale.po > "$output_file"
+cat po/summary/summary.$locale.po > "$output_file"
+echo -e "\n" >> "$output_file"
 
 for file in po/**/*.$locale.po; do
-    # Append each file's content to the output file, starting from line 13
-    tail -n +13 "$file" >> "$output_file"
-    echo -e "\n" >> "$output_file"
+    if [[ $file != "po/summary/summary.$locale.po" ]]; then
+        # Append each file's content to the output file, starting from line 13
+        tail -n +13 "$file" >> "$output_file"
+        echo -e "\n" >> "$output_file"
+    fi
 done
