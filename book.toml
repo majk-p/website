@@ -7,7 +7,11 @@ title = "The Book of sbt"
 
 [output.html]
 theme = "theme"
-additional-css = ["src/reference/custom-202410.css", "src/reference/mdbook-admonish.css"]
+additional-css = [
+  "src/reference/custom-202410.css",
+  "src/reference/mdbook-admonish.css",
+  "theme/language-picker.css"
+]
 cname = "www.scala-sbt.org"
 
 [preprocessor.variables]
