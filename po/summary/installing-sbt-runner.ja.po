@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Book of sbt\n"
+"POT-Creation-Date: 2024-10-31T01:06:06-04:00\n"
+"PO-Revision-Date: 2024-10-31 02:44-0400\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.5\n"
+
+#: src/reference/Setup.md:1
+msgid "Installing sbt runner"
+msgstr "sbt runner のインストール"
+
+#: src/reference/Setup.md:4
+msgid "To build an sbt project, you'll need to take these steps:"
+msgstr "sbt プロジェクトをビルドするためには、以下の手順をたどる必要がある:"
+
+#: src/reference/Setup.md:6
+msgid ""
+"Install JDK (We recommend Eclipse Adoptium Temurin JDK 8, 11, or 17, or Zulu "
+"JDK 8 for macOS with ARM chips)."
+msgstr ""
+"JDK をインストールする (Eclipse Adoptium Temurin JDK 8、11、17、もしくは ARM "
+"チップの macOS の場合、Zulu JDK を推奨)。"
+
+#: src/reference/Setup.md:7
+msgid "Install sbt runner."
+msgstr "sbt runner のインストール。"
+
+#: src/reference/Setup.md:9
+msgid ""
+"sbt runner is a script that invokes a declared version of sbt, downloading "
+"it beforehand if necessary. This allows build authors to precisely control "
+"the sbt version, instead of relying on users' machine environment."
+msgstr ""
+"sbt runner は、宣言されたバージョンの sbt を必要に応じてダウンロードして、実"
+"行するスクリプトだ。この機構によってユーザのマシン環境に依存することなく、ビ"
+"ルド作者が sbt のバージョンを正確に管理することができる。"
+
+#: src/reference/Setup.md:12
+msgid "Prerequisites"
+msgstr "システム要件"
+
+#: src/reference/Setup.md:14
+msgid ""
+"sbt runs on all major operating systems; however, it requires JDK 8 or "
+"higher to run."
+msgstr ""
+"sbt は主なオペレーティング・システムにおいて動作するが、事前に JDK 8 以上がイ"
+"ンストールされていることを必要とする。"
+
+#: src/reference/Setup.md:17
+msgid "# openjdk version \"1.8.0_352\"\n"
+msgstr ""
+
+#: src/reference/Setup.md:21
+msgid "Installing from SDKMAN"
+msgstr "SDKMAN からのインストール"
+
+#: src/reference/Setup.md:23
+msgid ""
+"To install both JDK and sbt, consider using [SDKMAN](https://sdkman.io/)."
+msgstr ""
+"JDK と sbt のインストールをするのに、[SDKMAN](https://sdkman.io/) を使うこと"
+"ができる。"
+
+#: src/reference/Setup.md:26
+msgid "\"\\b8\\.[0-9]*\\.[0-9]*\\-tem\""
+msgstr ""
+
+#: src/reference/Setup.md:30
+msgid "Universal packages"
+msgstr "ユニバーサル・パッケージ"
+
+#: src/reference/Setup.md:32
+msgid ""
+"[sbt-1.10.0.zip](https://github.com/sbt/sbt/releases/download/v1.10.0/"
+"sbt-1.10.0.zip)"
+msgstr ""
+
+#: src/reference/Setup.md:33
+msgid ""
+"[sbt-1.10.0.tgz](https://github.com/sbt/sbt/releases/download/v1.10.0/"
+"sbt-1.10.0.tgz)"
+msgstr ""
+
+#: src/reference/Setup.md:34
+msgid ""
+"[sbt-1.10.0.msi](https://github.com/sbt/sbt/releases/download/v1.10.0/"
+"sbt-1.10.0.msi)"
+msgstr ""
+
+#: src/reference/Setup.md:36
+msgid "Verify the sbt runner"
+msgstr "sbt runner の確認"
+
+#: src/reference/Setup.md:40
+msgid "# 1.10.0\n"
+msgstr ""

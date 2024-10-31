@@ -2,9 +2,8 @@
 
 [Introduction](README.md)
 
-- [Quick Start]()
-  - [Installing sbt runner](Setup.md)
-  - [sbt by example](sbt-by-example.md)
+- [Installing sbt runner](Setup.md)
+- [sbt by example](sbt-by-example.md)
 - [Getting Started](guide/index.md)
   - [Why sbt exists](guide/why-sbt-exists.md)
   - [Creating a new build](guide/sbt-new.md)
