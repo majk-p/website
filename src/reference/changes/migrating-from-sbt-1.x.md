@@ -59,7 +59,7 @@ lazy val plugin = (projectMatrix in file("plugin"))
   .settings(
     name := "sbt-vimquit",
   )
-  .jvmPlatform(scalaVersions = Seq("3.3.3", "2.12.20"))
+  .jvmPlatform(scalaVersions = Seq("3.6.2", "2.12.20"))
 ```
 
 If you use `projectMatrix`, make sure to move the plugin to a subdirectory like `plugin/`. Otherwise, the synthetic root project will also pick up the `src/`.
@@ -71,7 +71,7 @@ Use sbt 1.10.2 or later, if you want to cross build using sbt 1.x.
 ```scala
 // using sbt 1.x
 lazy val scala212 = "2.12.20"
-lazy val scala3 = "3.3.4"
+lazy val scala3 = "3.6.2"
 ThisBuild / crossScalaVersions := Seq(scala212, scala3)
 
 lazy val plugin = (project in file("plugin"))
