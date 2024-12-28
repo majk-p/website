@@ -102,6 +102,23 @@ libraryDependencies += "org.scala-js" %% "scalajs-dom" % "2.8.0"
 
 Use `.platform(Platform.jvm)` in case where JVM libraries are needed.
 
+Changes to `target`
+-------------------
+
+In sbt 2.x, the `target` directory is unified to be a single `target/` directory in the working directory, and each subproject creates a subdirectory encoding platform, Scala version, and the subproject id. To absorb this change in scripted tests, `exists`, `absent`, and `delete` now supports glob expression `**`, as well as `||`.
+
+```bash
+# before
+$ absent target/out/jvm/scala-3.3.1/clean-managed/src_managed/foo.txt
+$ exists target/out/jvm/scala-3.3.1/clean-managed/src_managed/bar.txt
+
+# after
+$ absent target/**/src_managed/foo.txt
+$ exists target/**/src_managed/bar.txt
+
+# either is ok
+$ exists target/**/proj/src_managed/bar.txt || proj/target/**/src_managed/bar.txt
+```
 
 The PluginCompat technique
 --------------------------
